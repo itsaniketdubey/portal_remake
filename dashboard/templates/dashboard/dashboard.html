@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>  
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'dashboard.css' %}">
+    <title>Dashboard</title>
+</head>
+
+<body> 
+    <div class="background">
+        <div class="sidebar">
+            <img id="logo" src="{% static 'logo.png' %}" alt="logo">
+            <a class="active" href="#">Home</a>
+            <a href="#">Classroom</a>
+            <a href="#">Attendance</a>
+            <a href="#">Announcements</a>
+            <a href="#">Assignments</a>
+            <a href="#">ICA</a>
+            <a href="#">Library</a>
+            <a href="#">Faculty</a>
+            <a href="#">Settings</a>
+        </div>
+
+        <div class="grid-container">
+            <div class="navbar">
+                <form>
+                    <input type="text" placeholder="Search.." name="search">
+                </form>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="#" class="notification">
+                                <span>Inbox</span>
+                                <span class="badge">3</span>
+                            </a>
+                        </li>
+                        <li><button>Logout</button></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="grid-item one"></div>
+            <div class="grid-item two"></div>
+            <div class="grid-item three"></div>
+            <div class="grid-item four"></div>
+            <div class="grid-item user">user</div>
+            <div class="grid-item graph">graph</div>
+            <div class="grid-item pie">pie</div>
+            <div class="grid-item big">big</div>
+            <div class="grid-item cal">
+                <div class="calendar">
+                   
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
