@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{%static 'login.css'%}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+    <title>NMIMS</title>
+</head>
+
+<body>
+    {% block content %}
+    <div class="back">
+        <div class="glass">
+            <div class="row">
+                <img id="container-logo" src="{% static 'logo.png' %}" alt="logo">
+                <div class="col">
+                    <h1>Welcome to NMIMS University</h1>
+                    <p>
+                        You are about to log in to the world of Online Learning at NMIMS.
+                        <br><br>
+                        A world made possible due to a combination of 30 years of legacy of best in class education and
+                        state of the art learning technology! Log in using the credentials given by the University.
+                        Please go through your profile details and update your contact information, it will help
+                        University to stay in touch with you.
+                        <br><br>
+                        With this Portal, we hope to provide you all the support you need during your enrollment with
+                        the Program offered by the University. It will be our endeavour to keep improving your
+                        experience with this Portal as we go along.
+                        <br>
+                        Happy Learning! - Team
+                        <br><br>
+                    </p>
+
+                    <img id="playstore-logo" src="{%static 'playstore.png' %}" alt="playstore">
+
+                    <p>For any support queries please contact us at: <br>
+                        <a href="#">portal_app_team@svkm.ac.in</a> <br>
+                        022-42199993
+                        (Between 10:00 am to 7:00 pm)<br><br>
+                    </p>
+
+                    <p>For admission related or general queries kindly visit: <br>
+                        NMIMS: <a href="#">https://www.nmims.edu/admissions/</a> <br>
+                        SVKM: <a href="#">https://svkm.ac.in/</a> <br><br>
+                    </p>
+
+                </div>
+
+                <div class="col login">
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        {{ form.non_field_errors }}
+                        <h1>Sign-in</h1>
+                        <p>Please enter your provided login credentials.</p>
+                        {% comment %} {{form}} {% endcomment %}
+                        {{ form.username.errors }}
+                        <label for="{{ form.username.id_for_label }}">Username:</label>
+                        {{ form.username }}
+
+                        {{ form.password.errors }}
+                        <label for="{{ form.password.id_for_label }}">Password:</label>
+                        {{ form.password }}
+
+
+                        <button type="submit">Login</button>
+                        <a href="#">Forgot Password?</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+
+</html>
