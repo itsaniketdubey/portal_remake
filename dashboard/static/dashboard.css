@@ -92,60 +92,52 @@
     cursor: pointer;
 }
 
-:root {
-    --rad: 10px;
-    --dur: .3s;
-    --color-dark: #2f2f2f;
-    --color-light: #f1f1f1;
-    --color-brand: rgb(196, 66, 64);
-    --height: 3rem;
-    --btn-width: 3rem;
-    --bez: cubic-bezier(0, 0, 0.43, 1.49);
-  }
-  
-  form {
+form {
     position: relative;
     width: 20rem;
-    background: var(--color-brand);
-    border-radius: var(--rad);
+    background: rgb(196, 66, 64);
+    border-radius: 10px;
     display: inline-block;
-  }
-  input, button {
-    height: var(--height);
+}
+
+input,
+button {
+    height: 3rem;
     border: 0;
-    color: var(--color-dark);
-  }
-  input[type="search"] {
-    outline: 0; 
+    color: #2f2f2f;
+}
+
+input[type="search"] {
+    outline: 0;
     width: 100%;
     font-size: 13px;
-    background: var(--color-light);
+    background: #f1f1f1;
     padding: 0 1.6rem;
-    border-radius: var(--rad);
-    appearance: none; 
-    transition: all var(--dur) var(--bez);
+    border-radius: 10px;
+    appearance: none;
+    transition: all .3s cubic-bezier(0, 0, 0.43, 1.49);
     transition-property: width, border-radius;
     z-index: 1;
     position: relative;
-  }
-  #go {
-    display: none; 
+}
+
+#go {
+    display: none;
     position: absolute;
     top: 0;
     right: 0;
-    width: var(--btn-width);
+    width: 3rem;
     font-weight: bold;
-    background: var(--color-brand);
-    border-radius: 0 var(--rad) var(--rad) 0;
-  }
-  input:not(:placeholder-shown) {
-    border-radius: var(--rad) 0 0 var(--rad);
-    width: calc(100% - var(--btn-width));
-    + button {
-      display: block;
-    }
-  }
-  label {
+    background: rgb(196, 66, 64);
+    border-radius: 0 10px 10px 0;
+}
+
+input:not(:placeholder-shown) {
+    border-radius: 10px 0 0 10px;
+    width: calc(100% - 3rem);
+}
+
+label {
     position: absolute;
     clip: rect(1px, 1px, 1px, 1px);
     padding: 0;
@@ -153,8 +145,8 @@
     height: 1px;
     width: 1px;
     overflow: hidden;
-  }
-  
+}
+
 
 .notification {
     background-color: #555;
@@ -249,4 +241,3 @@ nav ul li a {
 .cal {
     grid-area: 4 / 5 / 6 / 7;
 }
-
