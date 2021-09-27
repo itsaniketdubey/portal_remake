@@ -123,10 +123,6 @@ form input[type="password"]:focus {
     box-shadow: 4px 4px 60px 8px rgba(0, 0, 0, 0.2);
 }
 
-form:hover {
-    margin: 4px; 
-}
-
 button {
     display: inline-block;
 
