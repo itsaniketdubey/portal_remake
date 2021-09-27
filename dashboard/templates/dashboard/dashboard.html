@@ -31,8 +31,10 @@
 
         <div class="grid-container">
             <div class="navbar">
-                <form>
-                    <input type="text" placeholder="Search.." name="search">
+                <form onsubmit="event.preventDefault();" role="search">
+                    <label for="search">Search for stuff</label>
+                    <input id="search" type="search" placeholder="Search..." autofocus required />
+                    <button id = "go"type="submit">Go</button>    
                 </form>
                 <nav>
                     <ul>
@@ -42,7 +44,9 @@
                                 <span class="badge">3</span>
                             </a>
                         </li>
-                        <li><button>Logout</button></li>
+                        <li>
+                            <button id="logout">Logout</button>
+                        </li>
                     </ul>
                 </nav>
             </div>
