@@ -62,9 +62,9 @@
                         <p>Please enter your provided login credentials.</p>
                         {% comment %} {{form}} {% endcomment %}
                         {{ form.username.errors }}
-                        <label for="{{ form.username.id_for_label }}">Username:</label> <br>
-                        {{ form.username }}
-
+                        <label for="{{ form.username.id_for_label }}">Username:</label> 
+                        {{ form.username }}  
+                        <br>
                         {{ form.password.errors }}
                         <label for="{{ form.password.id_for_label }}">Password:</label>
                         {{ form.password }}
