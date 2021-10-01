@@ -3,6 +3,8 @@ from django.contrib.auth.models import (
     BaseUserManager, AbstractBaseUser
 )
 
+# START OF CUSTOM USER MODEL
+
 
 class UserManager(BaseUserManager):
     def create_user(self, email, password=None):
@@ -52,18 +54,20 @@ class User(AbstractBaseUser):
     staff = models.BooleanField(default=False)  # a admin user; non super-user
     admin = models.BooleanField(default=False)  # a superuser
 
-    # notice the absence of a "Password field", that is built in.
-
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []  # Email & Password are required by default.
 
-    def get_full_name(self):
-        # The user is identified by their email address
+    def get_name(self):
         return self.email
 
-    def get_short_name(self):
-        # The user is identified by their email address
-        return self.email
+    def get_sap(self):
+        return self.sap
+
+    def get_phone(self):
+        return self.phone
+
+    def get_dob(self):
+        return self.dob
 
     def __str__(self):
         return self.email
@@ -88,3 +92,4 @@ class User(AbstractBaseUser):
         "Is the user a admin member?"
         return self.admin
     objects = UserManager()
+# END OF CUSTOM USER MODEL
