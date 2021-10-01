@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #user apps
+    # user apps
     'login.apps.LoginConfig',
     'dashboard.apps.DashboardConfig',
 ]
@@ -83,7 +83,7 @@ DATABASES = {
     }
 }
 
-
+AUTH_USER_MODEL = 'dashboard.User'
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
