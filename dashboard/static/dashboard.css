@@ -22,7 +22,7 @@
 .sidebar {
     width: 20vw;
     background-color: #f1f1f1;
-    overflow: auto;
+    /* overflow: auto; */
     font-size: 0.9rem;
     box-shadow: 0 0.5rem 0.5rem rgb(69, 69, 69);
 }
@@ -58,12 +58,12 @@
 
 .grid-container {
     display: grid;
-    flex-basis: 50%;
+    width: 80vw;
     margin: 1%;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: 0.5fr repeat(4, 1fr);
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
+    grid-column-gap: 0.5rem;
+    grid-row-gap: 0.5rem;
 }
 
 .grid-item {
@@ -73,7 +73,7 @@
     box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(2rem);
-    border-radius: 15px;
+    border-radius: 0.7rem;
     cursor: pointer;
 }
 
@@ -85,7 +85,7 @@
 .navbar {
     display: flex;
     align-items: center;
-    width: 1450px;
+    width: 79vw;
     grid-area: 1 / 1 / 2 / 7;
 }
 
@@ -98,12 +98,11 @@ form {
     position: relative;
     width: 20rem;
     background: rgb(196, 66, 64);
-    border-radius: 10px;
+    border-radius: 0.5rem;
     display: inline-block;
 }
 
-input,
-button {
+input {
     height: 3rem;
     border: 0;
     color: #2f2f2f;
@@ -115,7 +114,7 @@ input[type="search"] {
     font-size: 13px;
     background: #f1f1f1;
     padding: 0 1.6rem;
-    border-radius: 10px;
+    border-radius: 0.5rem;
     appearance: none;
     transition: all .3s cubic-bezier(0, 0, 0.43, 1.49);
     transition-property: width, border-radius;
@@ -135,7 +134,7 @@ input[type="search"] {
 }
 
 input:not(:placeholder-shown) {
-    border-radius: 10px 0 0 10px;
+    border-radius: 0.5rem 0 0 10px;
     width: calc(100% - 3rem);
 }
 
@@ -178,10 +177,10 @@ label {
 #logout {
     display: inline-block;
     color: #f1f1f1;
-    border: 0;
-    width: 130px;
+    height: 3rem;
+    width: 8rem;
     text-decoration: none;
-    border-radius: 10px;
+    border-radius: 0.5rem;
     background: rgb(196, 66, 64);
     box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -199,13 +198,13 @@ nav {
 nav ul li {
     list-style-type: none;
     display: inline-block;
-    margin-left: 30px;
+    margin-left: 1rem;
 }
 
 nav ul li a {
     text-decoration: none;
     color: gray;
-    font-size: 17px;
+    font-size: 0.8rem;
 }
 
 .one {

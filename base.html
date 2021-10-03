@@ -1,8 +1,9 @@
+
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
-<head>  
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,9 +13,68 @@
     <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'dashboard.css' %}">
     <title>Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            color: rgb(69, 69, 69);
+        }
+
+        .background {
+            flex: 1;
+            display: flex;
+            height: 100vh;
+            font-size: 20px;
+            /* background-image: url(background.jpg); */
+            /* background: rgb(255, 255, 255);
+            background: linear-gradient(rgba(255, 255, 255, 1) 0%, rgba(121, 9, 9, 1) 100%); */
+            width: 100%;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .sidebar {
+            width: 20vw;
+            background-color: #f1f1f1;
+            overflow: auto;
+            font-size: 0.9rem;
+            box-shadow: 0 0.5rem 0.5rem rgb(69, 69, 69);
+        }
+
+        #logo {
+            width: 46%;
+            height: auto;
+            margin: 20px 75px;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 1rem;
+            margin-right: 1rem;
+            margin-left: 1rem;
+            text-decoration: none;
+        }
+
+        .sidebar a.active {
+            background-color: rgb(196, 66, 64);
+            color: white;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .sidebar a:hover:not(.active) {
+            background-color: rgb(69, 69, 69);
+            color: white;
+            border-radius: 0.75rem;
+            padding: 1rem;
+        }
+    </style>
 </head>
 
-<body> 
+<body>
     <div class="background">
         <div class="sidebar">
             <img id="logo" src="{% static 'logo.png' %}" alt="logo">
@@ -29,7 +89,7 @@
             <a href="#">Settings</a>
         </div>
 
-        <div class="grid-container">
+        <!-- <div class="grid-container">
             <div class="navbar">
                 <form onsubmit="event.preventDefault();" role="search">
                     <label for="search">Search for stuff</label>
@@ -45,7 +105,7 @@
                             </a>
                         </li>
                         <li>
-                            <button id="logout">logout</button>
+                            <button id="logout">Logout</button>
                         </li>
                     </ul>
                 </nav>
@@ -63,7 +123,7 @@
                    
                 </div>
             </div>
-        </div>
+        </div> -->
 
     </div>
 </body>
