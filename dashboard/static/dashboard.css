@@ -181,7 +181,7 @@ label {
     width: 8rem;
     text-decoration: none;
     border-radius: 0.5rem;
-    background: rgb(196, 66, 64);
+    background: #c44240;
     box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(2rem);
