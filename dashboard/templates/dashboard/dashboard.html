@@ -69,7 +69,7 @@
                             </a>
                         </li>
                         <li>
-                            <button id="logout">logout</button>
+                            <button id="logout" onclick="location.href='{% url 'logout' %}'">Logout</button>
                         </li>
                     </ul>
                 </nav>
@@ -95,8 +95,7 @@
                 This is an announcement
             </div>
             <div class="grid-item cal">
-                <div class="calendar">
-                   
+                <div class="calendar">                   
                 </div>
             </div>
         </div>

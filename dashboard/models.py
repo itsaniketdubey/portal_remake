@@ -118,7 +118,7 @@ class Assignments(models.Model):
     assignment_name = models.TextField(default="Assignment")
     created=models.DateTimeField(auto_now_add=True)
     status = models.BooleanField(default=False)
-    submission_date = models.DateField(null=True)
+    submission_date = models.DateTimeField(null=True)
 
     def get_assignment_name(self):
         return self.assignment_name

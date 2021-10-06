@@ -21,5 +21,6 @@ from django.conf.urls.static import static
 from dashboard import views 
 
 urlpatterns = [
-    path( '', views.dashboard, name='dashboard')
+    path( '', views.dashboard, name='dashboard'),
+    path('logout/',views.logoutUser,name='logout')
 ]
