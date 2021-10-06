@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
     <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'responsive.css' %}">
     <title>Dashboard</title>
 </head>
 
@@ -18,15 +19,34 @@
     <div class="background">
         <div class="sidebar">
             <img id="logo" src="{% static 'logo.png' %}" alt="logo">
-            <a class="active" href="#">Home</a>
-            <a href="#">Classroom</a>
-            <a href="#">Attendance</a>
-            <a href="#">Announcements</a>
-            <a href="#">Assignments</a>
-            <a href="#">ICA</a>
-            <a href="#">Library</a>
-            <a href="#">Faculty</a>
-            <a href="#">Settings</a>
+            <a class="active" href="#">
+                <img class="ico home" src="{% static 'home.png' %}" alt="">
+                Home
+            </a>
+            <a href="#"> 
+                <img class="ico home" src="{% static 'classroom.png' %}" alt="">
+                Classroom</a>
+            <a href="#">
+                <img class="ico attendance" src="{% static 'attendance.png' %}" alt="">
+                Attendance</a>
+            <a href="#">
+                <img class="ico announcement" src="{% static 'announcement.png' %}" alt="">
+                Announcements</a>
+            <a href="#">
+                <img class="ico assignment" src="{% static 'assignment.png' %}" alt="">
+                Assignments</a>
+            <a href="#">
+                <img class="ico ica" src="{% static 'ica.png' %}" alt="">
+                ICA</a>
+            <a href="#">
+                <img class="ico library" src="{% static 'library.png' %}" alt="">
+                Library</a>
+            <a href="#">
+                <img class="ico faculty" src="{% static 'faculty.png' %}" alt="">
+                Faculty</a>
+            <a href="#">
+                <img class="ico settings" src="{% static 'settings.png' %}" alt="">
+                Settings</a>
         </div>
 
         <div class="grid-container">
@@ -40,7 +60,9 @@
                     <ul>
                         <li>
                             <a href="#" class="notification">
-                                <span>Inbox</span>
+                                <span>
+                                    <img id="bell" src="{% static 'bell.png' %}" alt="">
+                                </span>
                                 <span class="badge">3</span>
                             </a>
                         </li>

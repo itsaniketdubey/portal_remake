@@ -28,9 +28,17 @@
 }
 
 #logo {
+    display: block;
     width: 46%;
     height: auto;
-    margin: 20px 75px;
+    margin: 1.3rem 4.3rem;
+}
+
+.ico {
+    height: 1rem;
+    margin-right: 0.5rem;
+    top: 0.1rem;
+    float: left;
 }
 
 .sidebar a {
@@ -39,6 +47,7 @@
     margin-right: 1rem;
     margin-left: 1rem;
     text-decoration: none;
+    margin-top: 0.1rem;
 }
 
 .sidebar a.active {
@@ -46,7 +55,7 @@
     color: white;
     border-radius: 0.75rem;
     padding: 1rem;
-    margin-top: 0.5rem;
+    margin-top: 0.1rem;
 }
 
 .sidebar a:hover:not(.active) {
@@ -54,6 +63,7 @@
     color: white;
     border-radius: 0.75rem;
     padding: 1rem;
+    margin-top: 0.1rem;
 }
 
 .grid-container {
@@ -77,10 +87,10 @@
     cursor: pointer;
 }
 
-/* .grid-item:hover {
+.grid-item:hover {
     background-color: rgba(255, 255, 255, 0.9);
     transform: translateY(-5px);
-} */
+}
 
 .navbar {
     display: flex;
@@ -150,18 +160,23 @@ label {
 
 
 .notification {
-    background-color: #555;
+    /* background-color: #555; */
     color: white;
     height: 25px;
     text-decoration: none;
     position: relative;
     display: inline-block;
     border-radius: 5px;
+    top: 0.8rem;
 }
 
-.notification:hover {
-    background: rgb(196, 66, 64);
+#bell {
+    height: 1.7rem;
 }
+
+/* .notification:hover {
+    background: rgb(196, 66, 64);
+} */
 
 .notification .badge {
     position: absolute;
@@ -198,7 +213,7 @@ nav {
 nav ul li {
     list-style-type: none;
     display: inline-block;
-    margin-left: 1rem;
+    margin-left: 1.3rem;
 }
 
 nav ul li a {
