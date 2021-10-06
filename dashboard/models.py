@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import (
     BaseUserManager, AbstractBaseUser
 )
+import uuid
 
 # START OF CUSTOM USER MODEL
 
@@ -47,7 +48,7 @@ class User(AbstractBaseUser):
         default="test@gmail.com"
     )
     name = models.TextField(null=True)
-    sap = models.TextField(null=True, default="00000000000", max_length=11)
+    sap = models.TextField(null=True, default="00000000000", max_length=11,unique=True)
     dob = models.DateField(null=True)
     phone = models.TextField(null=True, max_length=10)
     is_active = models.BooleanField(default=True)
@@ -93,3 +94,39 @@ class User(AbstractBaseUser):
         return self.admin
     objects = UserManager()
 # END OF CUSTOM USER MODEL
+
+#START OF SUBJECT, BRANCH, ASSIGNMENT MODELS
+class Subject(models.Model):
+    subject_name = models.TextField(null=True,unique=True)
+    subject_id = models.UUIDField(default=uuid.uuid4,unique=True,primary_key=True,editable=False)
+    def get_subject_name(self):
+        return self.subject_name
+
+class Branch(models.Model):
+    sap = models.ForeignKey(User,to_field='sap',on_delete=models.CASCADE,default="00000000000",max_length=11)
+    branch_name = models.TextField(default="BRANCH",unique=True)
+    branch_id = models.UUIDField(default=uuid.uuid4,unique=True,primary_key=True)
+
+    def get_branch_name(self):
+        return self.branch_name
+
+
+
+class Assignments(models.Model):
+    branch_id = models.ForeignKey(Branch,to_field='branch_id',on_delete=models.CASCADE,default=uuid.uuid4)
+    subject_id = models.ForeignKey(Subject,on_delete=models.CASCADE)
+    assignment_name = models.TextField(default="Assignment")
+    created=models.DateTimeField(auto_now_add=True)
+    status = models.BooleanField(default=False)
+    submission_date = models.DateField(null=True)
+
+    def get_assignment_name(self):
+        return self.assignment_name
+    def get_assignment_status(self):
+        return self.status
+    def get_submission_date(self):
+        return self.submission_date
+    def get_subject_id(self):
+        return self.subject_id
+
+#END OF SUBJECT, BRANCH, ASSIGNMENT MODELS
