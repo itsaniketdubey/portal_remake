@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    color: rgb(69, 69, 69);
+    color: #454545;
 }
 
 .background {
@@ -51,11 +51,15 @@
 }
 
 .sidebar a.active {
-    background-color: rgb(196, 66, 64);
+    background-color: #c44240;
     color: white;
     border-radius: 0.75rem;
     padding: 1rem;
     margin-top: 0.1rem;
+}
+
+.sidebar a.active > img {
+    filter: invert(1);
 }
 
 .sidebar a:hover:not(.active) {
@@ -64,7 +68,13 @@
     border-radius: 0.75rem;
     padding: 1rem;
     margin-top: 0.1rem;
+   
 }
+
+.sidebar a:hover:not(.active) > img {
+     filter: invert(1);
+}
+
 
 .grid-container {
     display: grid;
@@ -84,13 +94,13 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(2rem);
     border-radius: 0.7rem;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
-.grid-item:hover {
+/* .grid-item:hover {
     background-color: rgba(255, 255, 255, 0.9);
     transform: translateY(-5px);
-}
+} */
 
 .navbar {
     display: flex;
@@ -110,6 +120,10 @@ form {
     background: rgb(196, 66, 64);
     border-radius: 0.5rem;
     display: inline-block;
+}
+
+.user {
+    /* font-size: 1rem; */
 }
 
 input {
@@ -133,14 +147,17 @@ input[type="search"] {
 }
 
 #go {
-    display: none;
+    display: inline;
     position: absolute;
     top: 0;
     right: 0;
     width: 3rem;
-    font-weight: bold;
+    color: white;
     background: rgb(196, 66, 64);
-    border-radius: 0 10px 10px 0;
+    border: none;
+    height: 3rem;
+    text-align: center;
+    border-radius: 0.5rem;
 }
 
 input:not(:placeholder-shown) {
