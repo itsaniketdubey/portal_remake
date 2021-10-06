@@ -1,2 +1,8 @@
 db.sqlite3
+
+login/__pycache__
+login/migrations/__pycache__
+
 dashboard/static/.DS_Store
+dashboard/__pycache__
+dashboard/migrations/__pycache__
