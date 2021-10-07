@@ -14,7 +14,6 @@
     <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
     <title>NMIMS</title>
 </head>
-
 <body>
     {% block content %}
     <div class="back">
@@ -38,22 +37,20 @@
                         Happy Learning! - Team
                         <br><br>
                     </p>
-
-                    <img id="playstore-logo" src="{%static 'playstore.png' %}" alt="playstore">
-
+                    <a href="https://play.google.com/store/apps/details?id=com.nmims.app" target="_blank">
+                        <img id="playstore-logo" src="{%static 'playstore.png' %}" alt="playstore">
+                    </a>
+                    
                     <p>For any support queries please contact us at: <br>
                         <a href="#">portal_app_team@svkm.ac.in</a> <br>
                         022-42199993
-                        (Between 10:00 am to 7:00 pm)<br><br>
+                        (Between 10:00 am to 7:00 pm)<br><br><br>
                     </p>
-
                     <p>For admission related or general queries kindly visit: <br>
-                        NMIMS: <a href="#">https://www.nmims.edu/admissions/</a> <br>
-                        SVKM: <a href="#">https://svkm.ac.in/</a> <br><br>
+                        NMIMS: <a href="https://www.nmims.edu/admission" target="_blank">https://www.nmims.edu/admissions/</a> <br>
+                        SVKM: <a href="https://svkm.ac.in/" target="_blank">https://svkm.ac.in/</a> <br><br>
                     </p>
-
                 </div>
-
                 <div class="col login">
                     <form action="" method="POST">
                         {% csrf_token %}
