@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'base.css' %}">
+    <link rel="stylesheet" href="{% static 'dashboard.css' %}">
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <div class="background">
+        <div class="sidebar">
+            <img id="logo" src="{% static 'logo.png' %}" alt="logo">
+            <a class="active" href="#">
+                <img class="ico home" src="{% static 'home.png' %}" alt="">
+                Home
+            </a>
+            <a href="#">
+                <img class="ico home" src="{% static 'classroom.png' %}" alt="">
+                Classroom</a>
+            <a href="#">
+                <img class="ico attendance" src="{% static 'attendance.png' %}" alt="">
+                Attendance
+            </a>
+            <a href="#">
+                <img class="ico" src="{% static 'assignment.png' %}" alt="">
+                Assignments</a>
+            <a href="#">
+                <img class="ico" src="{% static 'ica.png' %}" alt="">
+                ICA</a>
+            <a href="#">
+                <img class="ico" src="{% static 'library.png' %}" alt="">
+                Library</a>
+            <a href="#">
+                <img class="ico" src="{% static 'faculty.png' %}" alt="">
+                Faculty</a>
+            <a href="#">
+                <img class="ico" src="{% static 'announcement.png' %}" alt="">
+                Profile</a>
+            <a href="#">
+                <img class="ico" src="{% static 'settings.png' %}" alt="">
+                Settings</a>
+        </div>
+
+        <div class="container">
+            <div class="navbar-main">
+                <form onsubmit="event.preventDefault();" role="search">
+                    <label for="search">Search for stuff</label>
+                    <input id="search" type="search" placeholder="Search..." autofocus required />
+                    <button id="go" type="submit">Go</button>
+                </form>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="#" class="notification">
+                                <span>
+                                    <img id="bell" src="{% static 'bell.png' %}" alt="">
+                                </span>
+                                <span class="badge">3</span>
+                            </a>
+                        </li>
+                        <li>
+                            <button id="logout" onclick="location.href='{% url 'logout' %}'">Logout</button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            {% block content%} 
+            {% endblock %}
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

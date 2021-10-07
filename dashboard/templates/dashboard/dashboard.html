@@ -1,106 +1,22 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-
-<head>  
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
-    <link rel="stylesheet" href="{% static 'dashboard.css' %}">
-    <link rel="stylesheet" href="{% static 'responsive.css' %}">
-    <title>Dashboard</title>
-</head>
-
-<body> 
-    <div class="background">
-        <div class="sidebar">
-            <img id="logo" src="{% static 'logo.png' %}" alt="logo">
-            <a class="active" href="#">
-                <img class="ico home" src="{% static 'home.png' %}" alt="">
-                Home
-               
-            </a>
-            <a href="#"> 
-                <img class="ico home" src="{% static 'classroom.png' %}" alt="">
-                Classroom</a>
-            <a href="#">
-                <img class="ico attendance" src="{% static 'attendance.png' %}" alt="">
-                Attendance
-            </a>
-            <a href="#">
-                <img class="ico assignment" src="{% static 'assignment.png' %}" alt="">
-                Assignments</a>
-            <a href="#">
-                <img class="ico ica" src="{% static 'ica.png' %}" alt="">
-                ICA</a>
-            <a href="#">
-                <img class="ico library" src="{% static 'library.png' %}" alt="">
-                Library</a>
-            <a href="#">
-                <img class="ico faculty" src="{% static 'faculty.png' %}" alt="">
-                Faculty</a>
-            <a href="#">
-                <img class="ico announcement" src="{% static 'announcement.png' %}" alt="">
-                Profile</a>
-            <a href="#">
-                <img class="ico settings" src="{% static 'settings.png' %}" alt="">
-                Settings</a>
+{% extends 'dashboard/base.html' %}
+{% block content %}
+<div class="grid-container">
+    <div class="grid-item one"></div>
+    <div class="grid-item two"></div>
+    <div class="grid-item announcement">
+        <div class="title">
+            Announcements
         </div>
-
-        <div class="grid-container">
-            <div class="navbar">
-                <form onsubmit="event.preventDefault();" role="search">
-                    <label for="search">Search for stuff</label>
-                    <input id="search" type="search" placeholder="Search..." autofocus required />
-                    <button id = "go"type="submit">Go</button>    
-                </form>
-                <nav>
-                    <ul>
-                        <li>
-                            <a href="#" class="notification">
-                                <span>
-                                    <img id="bell" src="{% static 'bell.png' %}" alt="">
-                                </span>
-                                <span class="badge">3</span>
-                            </a>
-                        </li>
-                        <li>
-                            <button id="logout" onclick="location.href='{% url 'logout' %}'">Logout</button>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="grid-item one">
-                
-            </div>
-            <div class="grid-item two">
-                
-            </div>
-            <div class="grid-item three">
-                
-            </div>
-            <div class="grid-item four"></div>
-            <div class="grid-item user">
-                
-            </div>
-            <div class="grid-item graph"></div>
-            <div class="grid-item pie">
-
-            </div>
-            <div class="grid-item big">
-                This is an announcement
-            </div>
-            <div class="grid-item cal">
-                <div class="calendar">                   
-                </div>
-            </div>
+        <div class="ann">
+            <div class="prev">P</div>
+        <div class="text">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit ad, at expedita inventore doloribus facere.
         </div>
+        <div class="next">N</div>
 
+        </div>
     </div>
-</body>
-
-</html>
+    <div class="grid-item big"></div>
+    <div class="grid-item cal"></div>
+</div>
+{% endblock content %}
