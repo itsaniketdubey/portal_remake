@@ -130,3 +130,23 @@ class Assignments(models.Model):
         return self.subject_id
 
 #END OF SUBJECT, BRANCH, ASSIGNMENT MODELS
+
+#START OF FACULTY MODEL
+class Faculty(models.Model):
+    faculty_name = models.TextField(null=True, default="NAME")
+    faculty_id = models.UUIDField(default=uuid.uuid4,unique=True,primary_key=True)
+    subject_id = models.ForeignKey(Subject,on_delete=models.CASCADE)
+    faculty_email = models.EmailField(
+        verbose_name='email address',
+        max_length=255,
+        unique=True,
+        default="test@gmail.com"
+    )
+#END OF FACULTY MODEL
+
+#START OF ANNOUNCEMENT MODEL
+class Announcements(models.Model):
+    announcement_name = models.TextField(null=True,default="Announcement")
+
+#END OF ANNOUNCEMENT MODEL
+
