@@ -26,7 +26,7 @@
     box-shadow: 0 0.5rem 0.5rem rgb(69, 69, 69);
 }
 
-#logo {
+#logo { 
     display: block;
     width: 46%;
     height: auto;
@@ -72,6 +72,10 @@
 
 .sidebar a:hover:not(.active) > img {
      filter: invert(1);
+}
+
+.navbar-small{
+    display: none;
 }
 
 .navbar-main {
@@ -272,20 +276,39 @@ label {
         height: 1.2rem;
     }
 
-    .navbar {
+    .navbar-main{
+        display: none;
+    }
+    #go {
+        display: none;
+    }
+    .navbar-small {
+        display: flex;
+        position: absolute;
         margin-top: 5%;
-        margin-left: 23%;
+        margin-left: 25%;
     }
     
-    /* form {
+    form {
         width: 10rem;
-    }
-    input {
-        height: 2.3rem;
+        background-color: transparent;
+        cursor: pointer;
     }
 
-    #go {
-        height: 2.3rem;
-    } */
-
+    #demo-2 input[type=search] {
+        width: 1rem;
+        padding-left: 10px;
+        color: transparent;
+        cursor: pointer;
+    }
+    #demo-2 input[type=search]:hover {
+        background: #f1f1f1;
+    }
+    #demo-2 input[type=search]:focus {
+        width: 10rem;
+        padding-left: 32px;
+        color: #000;
+        background: #f1f1f1;
+        cursor: auto;
+    }
 }
