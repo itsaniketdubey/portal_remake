@@ -129,6 +129,8 @@ input[type="search"] {
     width: 100%;
     font-size: 13px;
     background: #f1f1f1;
+    box-shadow: -0.1rem -0.1rem 0.3rem #ffffffc4, 
+    inset 0.1rem 0.1rem 0.3rem rgba(94, 104, 121, 0.288);
     padding: 0 1.6rem;
     border-radius: 0.5rem;
     appearance: none;
@@ -205,7 +207,6 @@ label {
     text-decoration: none;
     border-radius: 0.5rem;
     background: #c44240;
-    box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(2rem);
     letter-spacing: 2px;
