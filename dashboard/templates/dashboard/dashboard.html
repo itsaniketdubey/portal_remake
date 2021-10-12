@@ -1,8 +1,59 @@
 {% extends 'dashboard/base.html' %}
 {% block content %}
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ['Year', 'Sales', 'Expenses'],
+        ['2004',  1000,      400],
+        ['2005',  1170,      460],
+        ['2006',  660,       1120],
+        ['2007',  1030,      540]
+      ]);
+
+      var options = {
+        title: 'Company Performance',
+        curveType: 'function',
+        legend: { position: 'bottom' }
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+      chart.draw(data, options);
+    }
+  </script>
+   <script type="text/javascript">
+    google.charts.load("current", {packages:["corechart"]});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ['Task', 'Hours per Day'],
+        ['Work',     11],
+        ['Eat',      2],
+        ['Commute',  2],
+        ['Watch TV', 2],
+        ['Sleep',    7]
+      ]);
+
+      var options = {
+        title: 'My Daily Activities',
+        pieHole: 0.4,
+      };
+
+      var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+      chart.draw(data, options);
+    }
+  </script>
 <div class="grid-container">
-    <div class="grid-item one"></div>
-    <div class="grid-item two"></div>
+    <div class="grid-item one">
+        <div id="curve_chart"></div>
+    </div>
+    <div class="grid-item two">
+        <div id="donutchart" ></div>
+    </div>
     <div class="grid-item announcement">
         <div class="title">
             Announcements
@@ -65,6 +116,8 @@
             </tbody>
         </table>
     </div>
-    <div class="grid-item cal"></div>
+    <div class="grid-item cal">
+        
+    </div>
 </div>
 {% endblock content %}
