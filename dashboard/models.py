@@ -55,7 +55,7 @@ class User(AbstractBaseUser):
     staff = models.BooleanField(default=False)  # a admin user; non super-user
     admin = models.BooleanField(default=False)  # a superuser
 
-    USERNAME_FIELD = 'email'
+    USERNAME_FIELD = 'sap'
     REQUIRED_FIELDS = []  # Email & Password are required by default.
 
     def get_name(self):
