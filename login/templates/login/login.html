@@ -58,11 +58,11 @@
                         <h1>Sign-in</h1>
                         <p>Please enter your provided login credentials.</p>
                         {% comment %} {{form}} {% endcomment %}
-                        
+                        <p>SAP ID: </p>
                         {{ form.username.errors }}
                         <!-- <label id="email" for="{{ form.username.id_for_label }}">Email:</label> -->
                         {{ form.username }}
-
+                        <p>Password:</p>
                         {{ form.password.errors }}
                         <!-- <label for="{{ form.password.id_for_label }}">Password:</label> -->
                         {{ form.password }}
