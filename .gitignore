@@ -6,3 +6,4 @@ login/migrations/__pycache__
 dashboard/static/.DS_Store
 dashboard/__pycache__
 dashboard/migrations/__pycache__
+__pycache__
