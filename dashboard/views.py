@@ -11,3 +11,7 @@ def logoutUser(request):
 @login_required(login_url='login')
 def dashboard(request):
     return render(request, 'dashboard/dashboard.html')
+
+@login_required(login_url='login')
+def faculty(request):
+    return render(request, 'dashboard/faculty.html')

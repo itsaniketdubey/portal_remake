@@ -16,39 +16,40 @@
 </head>
 
 <body>
-   
+
     <div class="background">
         <div class="sidebar">
             <img id="logo" src="{% static 'logo.png' %}" alt="logo">
-            <a class="active" href="#">
+
+            <a class="pg active" href="{% url 'dashboard' %}" onclick="changePage()">
                 <img class="ico home" src="{% static 'home.png' %}" alt="">
                 Home
             </a>
-            <a href="#">
+            <a class="pg" href="#" onclick="changePage()">
                 <img class="ico home" src="{% static 'classroom.png' %}" alt="">
                 Classroom</a>
-            <a href="#">
+            <a class="pg" href="#" onclick="changePage()">
                 <img class="ico attendance" src="{% static 'attendance.png' %}" alt="">
                 Attendance
             </a>
-            <a href="#">
+            <a class="pg" href="#" onclick="changePage()">
                 <img class="ico" src="{% static 'assignment.png' %}" alt="">
                 Assignments</a>
-            <a href="#">
+            <a class="pg" href="#" onclick="changePage()">
                 <img class="ico" src="{% static 'ica.png' %}" alt="">
                 ICA</a>
-            <a href="#">
+            <a class="pg" href="#" onclick="changePage()">
                 <img class="ico" src="{% static 'library.png' %}" alt="">
                 Library</a>
-            <a href="#">
+            <a class="pg" href="{% url 'faculty' %}" onclick="changePage()">
                 <img class="ico" src="{% static 'faculty.png' %}" alt="">
                 Faculty</a>
-            <a href="#">
+            <a class="pg" href="#" onclick="changePage()">
                 <img class="ico" src="{% static 'announcement.png' %}" alt="">
                 Profile</a>
-            <a href="#">
+            <a class="pg" href="#" onclick="changePage()">
                 <img class="ico" src="{% static 'settings.png' %}" alt="">
-                Settings</a>
+                Settings </a>
         </div>
 
         <div class="container">
@@ -80,17 +81,27 @@
                     <input type="search" placeholder="Search">
                 </form>
             </div>
-            {% block content%} 
+            {% block content%}
             {% endblock %}
-
         </div>
 
     </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
     <script>
+        function changePage() {
+            $(".sidebar a").on("click", function () {
+                $(".sidebar").find(".active").removeClass("active");
+                $(this).addClass("active");
+            });
+        }
+
         function toggleSidebar() {
             document.getElementsByClassName("sidebar").classList.toggle('active');
         }
     </script>
+
 
 </body>
 
