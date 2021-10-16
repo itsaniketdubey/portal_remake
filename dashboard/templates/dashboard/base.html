@@ -16,6 +16,7 @@
 </head>
 
 <body>
+   
     <div class="background">
         <div class="sidebar">
             <img id="logo" src="{% static 'logo.png' %}" alt="logo">
@@ -62,7 +63,7 @@
                         <li>
                             <a href="#" class="notification">
                                 <span>
-                                    <img id="bell" src="{% static 'bell.png' %}" alt="">
+                                    <img id="bell" src="{% static 'bell.png' %}" alt="notifications">
                                 </span>
                                 <span class="badge">3</span>
                             </a>
@@ -74,6 +75,7 @@
                 </nav>
             </div>
             <div class="navbar-small">
+                <img id="search" src="{% static 'search.png' %}" alt="search">
                 <form id="demo-2">
                     <input type="search" placeholder="Search">
                 </form>
@@ -84,6 +86,11 @@
         </div>
 
     </div>
+    <script>
+        function toggleSidebar() {
+            document.getElementsByClassName("sidebar").classList.toggle('active');
+        }
+    </script>
 
 </body>
 

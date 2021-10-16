@@ -21,7 +21,6 @@
 .sidebar {
     width: 20vw;
     background-color: #f1f1f1;
-    /* overflow: auto; */
     font-size: 0.9rem;
     box-shadow: 0 0.5rem 0.5rem rgb(69, 69, 69);
 }
@@ -250,13 +249,15 @@ label {
 @media screen and (max-width: 540px){
 
     .sidebar {
+        position: fixed;
         display: flex;
         width: 17vw;
         flex-direction: column;
         justify-content: center;
         height: 100vh;
-        position: fixed;
+        z-index: 9999;
     }
+   
 
     #logo {
         display: none;
@@ -269,7 +270,6 @@ label {
         display: flex;
         justify-content: center;
         align-items: center;
-        text-align: center;
     }
 
     .sidebar a img{
@@ -283,11 +283,19 @@ label {
     #go {
         display: none;
     }
+
     .navbar-small {
+        background-color: red;
+        position: fixed;
         display: flex;
-        position: absolute;
-        margin-top: 5%;
-        margin-left: 25%;
+        width: 100vw;
+        height: 15%;
+        z-index: 999;
+    }
+    #search{
+        display: none;
+        width: 1.75rem;
+        height: 1.75rem;
     }
     
     form {
@@ -312,4 +320,5 @@ label {
         background: #f1f1f1;
         cursor: auto;
     }
+    
 }
