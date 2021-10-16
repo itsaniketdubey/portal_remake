@@ -1,0 +1,13 @@
+.settings-back {
+    margin: 1% 1% 0 2%;
+    display: flex;
+    background-color: red;
+}
+.settings-col {
+    flex-basis: 50%;
+}
+
+.settings-col-left {
+    flex-basis: 50%;
+    background-color: yellow;
+}

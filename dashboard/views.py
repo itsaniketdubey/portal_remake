@@ -15,3 +15,7 @@ def dashboard(request):
 @login_required(login_url='login')
 def faculty(request):
     return render(request, 'dashboard/faculty.html')
+
+@login_required(login_url='login')
+def settings(request):
+    return render(request, 'dashboard/settings.html')

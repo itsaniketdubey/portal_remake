@@ -12,7 +12,9 @@
     <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'base.css' %}">
     <link rel="stylesheet" href="{% static 'dashboard.css' %}">
-    <title>Dashboard</title>
+    <link rel="stylesheet" href="{% static 'faculty.css' %}">
+    <link rel="stylesheet" href="{% static 'settings.css' %}">
+    <title>NMIMS Portal</title>
 </head>
 
 <body>
@@ -47,7 +49,7 @@
             <a class="pg" href="#" onclick="changePage()">
                 <img class="ico" src="{% static 'announcement.png' %}" alt="">
                 Profile</a>
-            <a class="pg" href="#" onclick="changePage()">
+            <a class="pg" href="{% url 'settings' %}" onclick="changePage()">
                 <img class="ico" src="{% static 'settings.png' %}" alt="">
                 Settings </a>
         </div>
