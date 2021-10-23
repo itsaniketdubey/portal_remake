@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="{% static 'base.css' %}">
     <link rel="stylesheet" href="{% static 'dashboard.css' %}">
     <link rel="stylesheet" href="{% static 'faculty.css' %}">
+    <link rel="stylesheet" href="{% static 'ica.css' %}">
+    <link rel="stylesheet" href="{% static 'library.css' %}">
+    <link rel="stylesheet" href="{% static 'assignments.css' %}">
     <link rel="stylesheet" href="{% static 'settings.css' %}">
     <title>NMIMS Portal</title>
 </head>
@@ -23,32 +26,92 @@
         <div class="sidebar">
             <img id="logo" src="{% static 'logo.png' %}" alt="logo">
 
-            <a class="pg active" href="{% url 'dashboard' %}" onclick="changePage()">
+            {% if request.path == "/dashboard/"%}
+            <a class="pg active" href="{% url 'dashboard' %}">
                 <img class="ico home" src="{% static 'home.png' %}" alt="">
                 Home
             </a>
-            <a class="pg" href="#" onclick="changePage()">
+            {% else %}
+            <a class="pg" href="{% url 'dashboard' %}">
+                <img class="ico home" src="{% static 'home.png' %}" alt="">
+                Home
+            </a>
+            {% endif %}
+
+            {% if request.path == "/dashboard/timetable/"%}
+            <a class="pg active" href="#">
                 <img class="ico home" src="{% static 'classroom.png' %}" alt="">
                 Timetable</a>
-            <a class="pg" href="#" onclick="changePage()">
+            {% else %}
+            <a class="pg" href="#">
+                <img class="ico home" src="{% static 'classroom.png' %}" alt="">
+                Timetable</a>
+            {% endif %}
+
+            {% if request.path == "/dashboard/attendance/"%}
+            <a class="pg active" href="#">
                 <img class="ico attendance" src="{% static 'attendance.png' %}" alt="">
                 Attendance
             </a>
-            <a class="pg" href="#" onclick="changePage()">
+            {% else %}
+            <a class="pg" href="#">
+                <img class="ico attendance" src="{% static 'attendance.png' %}" alt="">
+                Attendance
+            </a>
+            {% endif %}
+
+            {% if request.path == "/dashboard/assignments/"%}
+            <a class="pg active" href="{% url 'assignments' %}">
                 <img class="ico" src="{% static 'assignment.png' %}" alt="">
                 Assignments</a>
-            <a class="pg" href="#" onclick="changePage()">
+            {% else %}  
+            <a class="pg" href="{% url 'assignments' %}">
+                <img class="ico" src="{% static 'assignment.png' %}" alt="">
+                Assignments</a>
+            {% endif %}
+
+            {% if request.path == "/dashboard/ica/"%}
+            <a class="pg active" href="{% url 'ica' %}">
                 <img class="ico" src="{% static 'ica.png' %}" alt="">
                 ICA</a>
-            <a class="pg" href="#" onclick="changePage()">
+            {% else %}  
+            <a class="pg" href="{% url 'ica' %}">
+                <img class="ico" src="{% static 'ica.png' %}" alt="">
+                ICA</a>
+            {% endif %}
+
+
+            {% if request.path == "/dashboard/library/"%}
+            <a class="pg active" href="{% url 'library' %}">
                 <img class="ico" src="{% static 'library.png' %}" alt="">
                 Library</a>
-            <a class="pg" href="{% url 'faculty' %}" onclick="changePage(); faculty">
+            {% else %}
+            <a class="pg" href="{% url 'library' %}">
+                <img class="ico" src="{% static 'library.png' %}" alt="">
+                Library</a>
+            {% endif %}
+
+            {% if request.path == "/dashboard/faculty/"%}
+            <a class="pg active" href="{% url 'faculty' %}" alt ="faculty">
                 <img class="ico" src="{% static 'faculty.png' %}" alt="">
                 Faculty</a>
-            <a class="pg" href="{% url 'settings' %}" onclick="changePage()">
+            {% else %}
+            <a class="pg" href="{% url 'faculty' %}" alt ="faculty">
+                <img class="ico" src="{% static 'faculty.png' %}" alt="">
+                Faculty</a>
+            {% endif %}
+
+            {% if request.path == "/dashboard/settings/"%}
+            <a class="pg active" href="{% url 'settings' %}">
                 <img class="ico" src="{% static 'settings.png' %}" alt="">
                 Settings </a>
+            {% else %}
+            <a class="pg" href="{% url 'settings' %}">
+                <img class="ico" src="{% static 'settings.png' %}" alt="">
+                Settings </a> 
+            {% endif %}
+            
+            
         </div>
 
         <div class="container">
@@ -90,28 +153,10 @@
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
     <script>
-        function changePage() {
-            $(".sidebar a").on("click", function () {
-                $(".sidebar").find(".active").removeClass("active");
-                $(this).addClass("active");
-            });
-        }
-
-        // function home() {
-        //     $(document).ready(function () {
-        //         $(".pg active").click(function () {
-        //             $(".load").load("./dashboard.html");
-        //             return false;
-        //         });
-        //     });
-        // }
-
-        // function faculty() {
-        //     $(document).ready(function () {
-        //         $(".pg active").click(function () {
-        //             $(".load").load("./dashboard.html");
-        //             return false;
-        //         });
+        // function changePage() {
+        //     $(".sidebar a").on("click", function () {
+        //         $(".sidebar").find(".active").removeClass("active");
+        //         $(this).addClass("active");
         //     });
         // }
 

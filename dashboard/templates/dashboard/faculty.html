@@ -2,15 +2,6 @@
 {% load static %}
 {% block content %}
 <div class="faculty-back">
-    <!-- <div class="sub-list">
-        <a class="sub on" href="#" onclick="changeSub()">DAA</a>
-        <a class="sub" href="#" onclick="changeSub()">MAE</a>
-        <a class="sub" href="#" onclick="changeSub()">CN</a>
-        <a class="sub" href="#" onclick="changeSub()">Web Programming</a>
-        <a class="sub" href="#" onclick="changeSub()">DM</a>
-        <a class="sub" href="#" onclick="changeSub()">IP</a>
-        <a class="sub" href="#" onclick="changeSub()">EVS</a>
-    </div> -->
     <div class="faculty-cards">
         <div class="prev">P</div>
         <div class="faculty-grid">
@@ -37,13 +28,5 @@
 
     </div>
 </div>
-<script>
-    function changeSub() {
-        $(".sub-list a").on("click", function () {
-            $(".sub-list").find(".on").removeClass("on");
-            $(this).addClass("on");
-        });
-    }
-</script>
 
 {% endblock content %}

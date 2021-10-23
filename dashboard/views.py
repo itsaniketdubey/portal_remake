@@ -26,6 +26,17 @@ def dashboard(request):
 def faculty(request):
     return render(request, 'dashboard/faculty.html')
 
+@login_required(login_url='login')
+def ica(request):
+    return render(request, 'dashboard/ica.html')
+
+@login_required(login_url='login')
+def library(request):
+    return render(request, 'dashboard/library.html')
+
+@login_required(login_url='login')
+def assignments(request):
+    return render(request, 'dashboard/assignments.html')
 
 @login_required(login_url='login')
 def settings(request):
