@@ -48,6 +48,10 @@
     }
   </script>
 <div class="grid-container">
+{% comment %} {% for items in branchname %}
+ <h1>{{items.branch_name}}</h1> {% endcomment %}
+
+{% comment %} {% endfor %} {% endcomment %}
     <div class="grid-item one">
         <!-- <div id="barchart_material" style="width: 100%; height: 100%;"></div> -->
     </div>
@@ -61,12 +65,11 @@
             Announcements
         </div>
         <div class="ann">
-            <div class="prev">P</div>
             <div class="text">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit ad, at expedita inventore doloribus
-                facere.
+                {% for items in announcementname %}
+                {{items.announcement_name}}
+                {% endfor %%}
             </div>
-            <div class="next">N</div>
 
         </div>
     </div>
@@ -78,43 +81,25 @@
         <table class="GridTable">
             <thead>
                 <tr>
-                    <th>Subject</th>
+                    <th>Assignment</th>
                     <th>Start Date</th>
                     <th>End Date</th>
                     <th>Status</th>
                 </tr>
             </thead>
             <tbody>
+            {% for items in assignmentname %}
                 <tr class="border-bottom">
-                    <td>Math</td>
-                    <td>21.01.2020</td>
-                    <td>21.01.2020</td>
+                    <td>{{items.subject_id.subject_name}}</td>
+                    <td>{{items.created}}</td>
+                    <td>{{items.submission_date}}</td>
+                    {% if items.status == TRUE %}
+                    <td><a class="status done" href="">Submitted</a></td>
+                    {% else %}
                     <td><a class="status pending" href="">Pending</a></td>
+                    {% endif%}
                 </tr> 
-                <tr class="border-bottom">
-                    <td>Fundamentals of C++</td>
-                    <td>21.01.2020</td>
-                    <td>21.01.2020</td>
-                    <td><a class="status done" href="">Submitted</a></td>
-                </tr>
-                <tr class="border-bottom">
-                    <td>Java</td>
-                    <td>21.01.2020</td>
-                    <td>21.01.2020</td>
-                    <td><a class="status done" href="">Submitted</a></td>
-                </tr>
-                <tr class="border-bottom">
-                    <td>Html & Css</td>
-                    <td>21.01.2020</td>
-                    <td>21.01.2020</td>
-                    <td><a class="status pending" href="">Pending</a></td>
-                </tr>
-                <tr class="border-bottom">
-                    <td>Html & Css</td>
-                    <td>21.01.2020</td>
-                    <td>21.01.2020</td>
-                    <td><a class="status pending" href="">Pending</a></td>
-                </tr>
+                {% endfor %}
             </tbody>
         </table>
     </div>
