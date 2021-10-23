@@ -48,7 +48,8 @@ class User(AbstractBaseUser):
         default="test@gmail.com"
     )
     name = models.TextField(null=True)
-    sap = models.TextField(null=True, default="00000000000", max_length=11,unique=True)
+    sap = models.TextField(
+        null=True, default="00000000000", max_length=11, unique=True)
     dob = models.DateField(null=True)
     phone = models.TextField(null=True, max_length=10)
     is_active = models.BooleanField(default=True)
@@ -95,58 +96,87 @@ class User(AbstractBaseUser):
     objects = UserManager()
 # END OF CUSTOM USER MODEL
 
-#START OF SUBJECT, BRANCH, ASSIGNMENT MODELS
+# START OF SUBJECT, BRANCH, ASSIGNMENT MODELS
+
+
 class Subject(models.Model):
-    subject_name = models.TextField(null=True,unique=True)
-    subject_id = models.UUIDField(default=uuid.uuid4,unique=True,primary_key=True,editable=False)
+    subject_name = models.TextField(null=True, unique=True)
+    subject_id = models.UUIDField(
+        default=uuid.uuid4, unique=True, primary_key=True, editable=False)
+
     def get_subject_name(self):
         return self.subject_name
 
+    class Meta:
+        verbose_name_plural = "Subjects"
+
+
 class Branch(models.Model):
-    sap = models.ForeignKey(User,to_field='sap',on_delete=models.CASCADE,default="00000000000",max_length=11)
-    branch_name = models.TextField(default="BRANCH",unique=True)
-    branch_id = models.UUIDField(default=uuid.uuid4,unique=True,primary_key=True)
+    sap = models.ForeignKey(
+        User, to_field='sap', on_delete=models.CASCADE, default="00000000000", max_length=11)
+    branch_name = models.TextField(default="BRANCH", unique=True)
+    branch_id = models.UUIDField(
+        default=uuid.uuid4, unique=True, primary_key=True)
 
     def get_branch_name(self):
         return self.branch_name
 
+    class Meta:
+        verbose_name_plural = "Branch"
 
 
 class Assignments(models.Model):
-    branch_id = models.ForeignKey(Branch,to_field='branch_id',on_delete=models.CASCADE,default=uuid.uuid4)
-    subject_id = models.ForeignKey(Subject,on_delete=models.CASCADE)
+    branch_id = models.ForeignKey(
+        Branch, to_field='branch_id', on_delete=models.CASCADE, default=uuid.uuid4)
+    subject_id = models.ForeignKey(Subject, on_delete=models.CASCADE)
     assignment_name = models.TextField(default="Assignment")
-    created=models.DateTimeField(auto_now_add=True)
+    created = models.DateTimeField(auto_now_add=True)
     status = models.BooleanField(default=False)
     submission_date = models.DateTimeField(null=True)
 
     def get_assignment_name(self):
         return self.assignment_name
+
     def get_assignment_status(self):
         return self.status
+
     def get_submission_date(self):
         return self.submission_date
+
     def get_subject_id(self):
         return self.subject_id
 
-#END OF SUBJECT, BRANCH, ASSIGNMENT MODELS
+    class Meta:
+        verbose_name_plural = "Assignments"
 
-#START OF FACULTY MODEL
+# END OF SUBJECT, BRANCH, ASSIGNMENT MODELS
+
+# START OF FACULTY MODEL
+
+
 class Faculty(models.Model):
     faculty_name = models.TextField(null=True, default="NAME")
-    faculty_id = models.UUIDField(default=uuid.uuid4,unique=True,primary_key=True)
-    subject_id = models.ForeignKey(Subject,on_delete=models.CASCADE)
+    faculty_id = models.UUIDField(
+        default=uuid.uuid4, unique=True, primary_key=True)
+    subject_id = models.ForeignKey(Subject, on_delete=models.CASCADE)
     faculty_email = models.EmailField(
         verbose_name='email address',
         max_length=255,
         unique=True,
         default="test@gmail.com"
     )
-#END OF FACULTY MODEL
 
-#START OF ANNOUNCEMENT MODEL
+    class Meta:
+        verbose_name_plural = "Faculty"
+# END OF FACULTY MODEL
+
+# START OF ANNOUNCEMENT MODEL
+
+
 class Announcements(models.Model):
-    announcement_name = models.TextField(null=True,default="Announcement")
+    announcement_name = models.TextField(null=True, default="Announcement")
 
-#END OF ANNOUNCEMENT MODEL
+    class Meta:
+        verbose_name_plural = "Announcement"
 
+# END OF ANNOUNCEMENT MODEL
