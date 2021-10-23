@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
 <div class="faculty-back">
-    <div class="sub-list">
+    <!-- <div class="sub-list">
         <a class="sub on" href="#" onclick="changeSub()">DAA</a>
         <a class="sub" href="#" onclick="changeSub()">MAE</a>
         <a class="sub" href="#" onclick="changeSub()">CN</a>
@@ -10,12 +10,34 @@
         <a class="sub" href="#" onclick="changeSub()">DM</a>
         <a class="sub" href="#" onclick="changeSub()">IP</a>
         <a class="sub" href="#" onclick="changeSub()">EVS</a>
-    </div>
+    </div> -->
     <div class="faculty-cards">
-       
+        <div class="prev">P</div>
+        <div class="faculty-grid">
+            <div class="faculty-grid-item fac1">
+                <div class="pfp">
+                    <img id="faculty-pfp" src="{% static 'faculty_pfp.png' %}" alt="faculty">
+                </div>
+                <img id="faculty-card" src="{% static 'faculty_card.png' %}" alt="faculty">
+            </div>
+            <div class="faculty-grid-item fac2">
+                <div class="pfp">
+                    <img id="faculty-pfp" src="{% static 'faculty_pfp.png' %}" alt="faculty">
+                </div>
+                <img id="faculty-card" src="{% static 'faculty_card.png' %}" alt="faculty">
+            </div>
+            <div class="faculty-grid-item fac3">
+                <div class="pfp">
+                    <img id="faculty-pfp" src="{% static 'faculty_pfp.png' %}" alt="faculty">
+                </div>
+                <img id="faculty-card" src="{% static 'faculty_card.png' %}" alt="faculty">
+            </div>
+        </div>
+        <div class="next">N</div>
+
     </div>
 </div>
-<script> 
+<script>
     function changeSub() {
         $(".sub-list a").on("click", function () {
             $(".sub-list").find(".on").removeClass("on");

@@ -29,7 +29,7 @@
             </a>
             <a class="pg" href="#" onclick="changePage()">
                 <img class="ico home" src="{% static 'classroom.png' %}" alt="">
-                Classroom</a>
+                Timetable</a>
             <a class="pg" href="#" onclick="changePage()">
                 <img class="ico attendance" src="{% static 'attendance.png' %}" alt="">
                 Attendance
@@ -43,12 +43,9 @@
             <a class="pg" href="#" onclick="changePage()">
                 <img class="ico" src="{% static 'library.png' %}" alt="">
                 Library</a>
-            <a class="pg" href="{% url 'faculty' %}" onclick="changePage()">
+            <a class="pg" href="{% url 'faculty' %}" onclick="changePage(); faculty">
                 <img class="ico" src="{% static 'faculty.png' %}" alt="">
                 Faculty</a>
-            <a class="pg" href="#" onclick="changePage()">
-                <img class="ico" src="{% static 'announcement.png' %}" alt="">
-                Profile</a>
             <a class="pg" href="{% url 'settings' %}" onclick="changePage()">
                 <img class="ico" src="{% static 'settings.png' %}" alt="">
                 Settings </a>
@@ -83,10 +80,11 @@
                     <input type="search" placeholder="Search">
                 </form>
             </div>
-            {% block content%}
-            {% endblock %}
-        </div>
+                {% block content%}
 
+            {% endblock %}
+            
+        </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
@@ -98,6 +96,24 @@
                 $(this).addClass("active");
             });
         }
+
+        // function home() {
+        //     $(document).ready(function () {
+        //         $(".pg active").click(function () {
+        //             $(".load").load("./dashboard.html");
+        //             return false;
+        //         });
+        //     });
+        // }
+
+        // function faculty() {
+        //     $(document).ready(function () {
+        //         $(".pg active").click(function () {
+        //             $(".load").load("./dashboard.html");
+        //             return false;
+        //         });
+        //     });
+        // }
 
         function toggleSidebar() {
             document.getElementsByClassName("sidebar").classList.toggle('active');

@@ -6,7 +6,6 @@
   grid-row-gap: 0.5rem;
   width: 79vw;
   height: 87%;
-  margin-left: 1%;
   margin: 0 1% 0 1%;
 }
 
@@ -393,6 +392,7 @@ a.status.done {
   .big {
     width: 100vw;
     grid-area: 4 / 1 / 5 / 2;
+    display: none;
 
   }
 
