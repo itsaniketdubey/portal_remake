@@ -3,6 +3,7 @@ from django.contrib.auth.models import (
     BaseUserManager, AbstractBaseUser
 )
 import uuid
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 # START OF CUSTOM USER MODEL
 
@@ -51,6 +52,7 @@ class User(AbstractBaseUser):
     sap = models.TextField(
         null=True, default="00000000000", max_length=11, unique=True)
     dob = models.DateField(null=True)
+    profile_pic = models.ImageField(null=True, blank=True)
     phone = models.TextField(null=True, max_length=10)
     is_active = models.BooleanField(default=True)
     staff = models.BooleanField(default=False)  # a admin user; non super-user
@@ -131,7 +133,7 @@ class Assignments(models.Model):
     subject_id = models.ForeignKey(Subject, on_delete=models.CASCADE)
     assignment_name = models.TextField(default="Assignment")
     created = models.DateTimeField(auto_now_add=True)
-    status = models.BooleanField(default=False)
+    status = models.CharField(max_length=10, default="Pending")
     submission_date = models.DateTimeField(null=True)
 
     def get_assignment_name(self):
@@ -180,3 +182,22 @@ class Announcements(models.Model):
         verbose_name_plural = "Announcement"
 
 # END OF ANNOUNCEMENT MODEL
+
+# START OF ICA MODEL
+
+
+class ICA(models.Model):
+    subject_id = models.ForeignKey(Subject, on_delete=models.CASCADE)
+    m1 = models.IntegerField(default=0, validators=[
+                             MaxValueValidator(10), MinValueValidator(0)])
+    m2 = models.IntegerField(default=0, validators=[
+                             MaxValueValidator(10), MinValueValidator(0)])
+    termwork = models.IntegerField(
+        default=0, validators=[MaxValueValidator(30), MinValueValidator(0)])
+    total = models.IntegerField(default=0, validators=[
+                                MaxValueValidator(50), MinValueValidator(0)])
+    status = models.CharField(max_length=10, default="PASS")
+
+    class Meta:
+        verbose_name_plural = "ICA"
+# END OF ICA MODEL
