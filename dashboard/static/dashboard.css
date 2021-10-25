@@ -11,11 +11,15 @@
 
 .grid-item {
   /* background-color: #f8f8f8; */
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 0.1rem solid rgba(255, 255, 255, 0.1);
+  /* box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2); */
   border-radius: 0.7rem;
 }
 
 .one {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   grid-area: 1 / 1 / 3 / 3;
 }
 
@@ -28,28 +32,52 @@
 
 }
 
-.announcement .title {
-  background-color: white;
+.title {
+  display: flex;
+  align-items: center;
+  border-radius: 0.7rem;
+  border: 2px solid rgb(196, 66, 64);
+  color: rgb(196, 66, 64);
   text-align: center;
+  justify-content: center;
+  height: 13%;
 }
 
 .ann {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: auto;
+  margin-top: 1%;
+  background-color: #f6f6f6;
+  border-radius: 0.7rem;
+  box-shadow: -0.1rem -0.1rem 0.3rem #f6f6f6,
+  inset 0.1rem 0.1rem 0.3rem rgba(94, 104, 121, 0.288);
+  height: 85%;
+  overflow: auto;
+  justify-content: space-between;
+  width: 100%;
 }
+.ann-table {
+  border-collapse: collapse;
+}
+.ann-text{
+  width: 100vw;
+  height: 15vh;
+  text-align: center;
+}
+.ann-body {
+  overflow-y: scroll;
+}
+/* table thead { display:block; }
+table tbody { height:300px; overflow-y:scroll; display:block; } */
 
 .announcement .next {
-  background-color: white;
+  background-color: red;
 }
 
 .announcement .text {
-  background-color: white;
+  background-color: yellow;
 }
 
 .announcement .prev {
-  background-color: white;
+  background-color: green;
 }
 
 
@@ -58,7 +86,7 @@
 }
 
 .header {
-  background-color:#f1f1f1;
+  background-color: #f1f1f1;
   width: 50%;
   height: 13%;
   box-shadow: -0.1rem -0.1rem 0.3rem #ffffffc4,
@@ -311,30 +339,28 @@ select {
   border-collapse: collapse;
 }
 
-
-td {
+.ass-table {
   text-align: center;
   width: 0.1rem;
 }
 
-th {
+.ass-header {
   font-weight: 700;
 }
 
-th:first-child {
+.ass-header:first-child {
   text-align: left;
 }
 
-td:first-child {
+.ass-table:first-child {
   text-align: left;
 }
 
-
-tr.border-bottom {
+.border-bottom {
   border-bottom: 1px solid rgba(69, 69, 69, 0.1);
 }
 
-a.status.pending {
+.status.pending {
   background-color: rgb(250, 140, 71);
   text-decoration: none;
   border-radius: 0.3rem;
@@ -342,7 +368,7 @@ a.status.pending {
   color: white;
 }
 
-a.status.done {
+.status.done {
   background-color: rgb(65, 155, 152);
   text-decoration: none;
   border-radius: 0.3rem;

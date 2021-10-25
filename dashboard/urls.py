@@ -27,5 +27,6 @@ urlpatterns = [
     path( 'ica/', views.ica, name='ica'),
     path( 'library/', views.library, name='library'),
     path( 'assignments/', views.assignments, name='assignments'),
+    path( 'timetable/', views.timetable, name='timetable'),
     path( 'settings/', views.settings, name='settings'),
 ]

@@ -39,11 +39,11 @@
             {% endif %}
 
             {% if request.path == "/dashboard/timetable/"%}
-            <a class="pg active" href="#">
+            <a class="pg active" href="{% url 'timetable' %}">
                 <img class="ico home" src="{% static 'classroom.png' %}" alt="">
                 Timetable</a>
             {% else %}
-            <a class="pg" href="#">
+            <a class="pg" href="{% url 'timetable' %}">
                 <img class="ico home" src="{% static 'classroom.png' %}" alt="">
                 Timetable</a>
             {% endif %}
@@ -116,11 +116,11 @@
 
         <div class="container">
             <div class="navbar-main">
-                <form onsubmit="event.preventDefault();" role="search">
+                <!-- <form onsubmit="event.preventDefault();" role="search">
                     <label for="search">Search for stuff</label>
                     <input id="search" type="search" placeholder="Search..." autofocus required />
                     <button id="go" type="submit">Go</button>
-                </form>
+                </form> -->
                 <nav>
                     <ul>
                         <li>
@@ -153,13 +153,6 @@
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
     <script>
-        // function changePage() {
-        //     $(".sidebar a").on("click", function () {
-        //         $(".sidebar").find(".active").removeClass("active");
-        //         $(this).addClass("active");
-        //     });
-        // }
-
         function toggleSidebar() {
             document.getElementsByClassName("sidebar").classList.toggle('active');
         }

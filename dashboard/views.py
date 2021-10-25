@@ -39,5 +39,9 @@ def assignments(request):
     return render(request, 'dashboard/assignments.html')
 
 @login_required(login_url='login')
+def timetable(request):
+    return render(request, 'dashboard/timetable.html')
+
+@login_required(login_url='login')
 def settings(request):
     return render(request, 'dashboard/settings.html')
