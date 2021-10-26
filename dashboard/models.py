@@ -133,7 +133,7 @@ class Assignments(models.Model):
     subject_id = models.ForeignKey(Subject, on_delete=models.CASCADE)
     assignment_name = models.TextField(default="Assignment")
     created = models.DateTimeField(auto_now_add=True)
-    status = models.CharField(max_length=10, default="Pending", null = False)
+    status = models.CharField(max_length=10, default="Pending", null=False)
     submission_date = models.DateTimeField(null=True)
 
     def get_assignment_name(self):
@@ -187,6 +187,8 @@ class Announcements(models.Model):
 
 
 class ICA(models.Model):
+    sap = models.ForeignKey(
+        User, to_field='sap', on_delete=models.CASCADE, default="00000000000", max_length=11)
     subject_id = models.ForeignKey(Subject, on_delete=models.CASCADE)
     m1 = models.IntegerField(default=0, validators=[
                              MaxValueValidator(10), MinValueValidator(0)])
@@ -201,3 +203,27 @@ class ICA(models.Model):
     class Meta:
         verbose_name_plural = "ICA"
 # END OF ICA MODEL
+# START OF ATTENDANCE MODEL
+
+
+class Attendance(models.Model):
+    sap = models.ForeignKey(
+        User, to_field='sap', on_delete=models.CASCADE, default="00000000000", max_length=11)
+    subject = models.ForeignKey(Subject, on_delete=models.DO_NOTHING)
+    date = models.DateField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name_plural = "Attendance"
+
+
+class AttendanceReport(models.Model):
+    sap = models.ForeignKey(
+        User, to_field='sap', on_delete=models.CASCADE, default="00000000000", max_length=11)
+    attendance = models.ForeignKey(Attendance, on_delete=models.CASCADE)
+    status = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name_plural = "AttendanceReport"
+# END OF ATTENDANCE MODEL

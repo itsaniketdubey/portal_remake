@@ -18,15 +18,16 @@ from django.contrib.auth import views as auth_views
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from . import views 
+from . import views
 
 urlpatterns = [
-    path( '', views.dashboard, name='dashboard'),
-    path('logout/',views.logoutUser,name='logout'),
-    path( 'faculty/', views.faculty, name='faculty'),
-    path( 'ica/', views.ica, name='ica'),
-    path( 'library/', views.library, name='library'),
-    path( 'assignments/', views.assignments, name='assignments'),
-    path( 'timetable/', views.timetable, name='timetable'),
-    path( 'settings/', views.settings, name='settings'),
+    path('', views.dashboard, name='dashboard'),
+    path('logout/', views.logoutUser, name='logout'),
+    path('faculty/', views.faculty, name='faculty'),
+    path('ica/', views.ica, name='ica'),
+    path('library/', views.library, name='library'),
+    path('assignments/', views.assignments, name='assignments'),
+    path('timetable/', views.timetable, name='timetable'),
+    path('settings/', views.settings, name='settings'),
+    path('attendance/', views.attendance, name='attendance'),
 ]
