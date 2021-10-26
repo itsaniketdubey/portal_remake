@@ -2,23 +2,19 @@
 {% load static %}
 {% block content %}
 
-<div class="settings-back"> 
-    <div class="set-main">
-        <div class="set-1">
-            <div class="b">
-                <img src="{% static 'settings_back.png' %}" alt="">
-            </div>
-            <a href="{#" class="set-edit">Edit</a>
-            <div class="profile-text">
-                <div class="name">Name: Tanishq Chamboowala</div>
-                email
-                dob
-                phone
-            </div>
-        </div>
+<div class="settings-back">
+    <div class="b">
+        <img src="{% static 'settings_back.png' %}" alt="set_back">
+    </div>
+    <div class="pfp">
+        <img src="{{user.profile_pic.url}}" alt="pfp">
+    </div>
+    <div class="profile-text">
+        <div class="name">Name: {{user.name}}</div>
+        <div class="email">Email: {{user.email}}</div>
+        <div class="dob">DOB: {{user.dob}}</div>
+        <div class="contact">Phone: {{user.phone}}</div>
     </div>
 </div>
-
-
 
 {% endblock content %}

@@ -12,14 +12,18 @@
                     <th class="ica-th">M2</th>
                     <th class="ica-th">Term Work</th>
                     <th class="ica-th">Total</th>
+                    <th class="ica-th">Status</th>
+
                 </tr>
                 {% for items in ica %}
                 <tr class="border-bottom">
-                    <th class="ica-th-a">{{items.ica.subject_id.subject_name}}</th>
-                    <td class="ica-td">{{items.ica.m1}}</td>
-                    <td class="ica-td">{{items.ica.m2}}</td>
-                    <td class="ica-td">{{items.ica.termwork}}</td>
-                    <td class="ica-td">{{items.ica.total}}</td>
+                    <th class="ica-th-a">{{items.subject_id.subject_name}}</th>
+                    <td class="ica-td">{{items.m1}}</td>
+                    <td class="ica-td">{{items.m2}}</td>
+                    <td class="ica-td">{{items.termwork}}</td>
+                    <td class="ica-td">{{items.total}}</td>
+                    <td class="ica-td">{{items.status}}</td>
+
                 </tr>
                 {%endfor%}
             </tbody>

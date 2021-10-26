@@ -7,8 +7,8 @@ from .models import *
 context = {
     'branchname': Branch.objects.all(),
     'assignmentname': Assignments.objects.all(),
-    'announcementname': Announcements.objects.all()
-
+    'announcementname': Announcements.objects.all(),
+    'ica':ICA.objects.all()
 }
 
 
@@ -27,34 +27,34 @@ def dashboard(request):
 
 @login_required(login_url='login')
 def faculty(request):
-    return render(request, 'dashboard/faculty.html')
+    return render(request, 'dashboard/faculty.html', context)
 
 
 @login_required(login_url='login')
 def ica(request):
-    return render(request, 'dashboard/ica.html')
+    return render(request, 'dashboard/ica.html', context)
 
 
 @login_required(login_url='login')
 def library(request):
-    return render(request, 'dashboard/library.html')
+    return render(request, 'dashboard/library.html', context)
 
 
 @login_required(login_url='login')
 def assignments(request):
-    return render(request, 'dashboard/assignments.html')
+    return render(request, 'dashboard/assignments.html', context)
 
 
 @login_required(login_url='login')
 def timetable(request):
-    return render(request, 'dashboard/timetable.html')
+    return render(request, 'dashboard/timetable.html', context)
 
 
 @login_required(login_url='login')
 def settings(request):
-    return render(request, 'dashboard/settings.html')
+    return render(request, 'dashboard/settings.html', context)
 
 
 @login_required(login_url='login')
 def attendance(request):
-    return render(request, 'dashboard/attendance.html')
+    return render(request, 'dashboard/attendance.html', context)

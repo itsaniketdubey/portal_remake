@@ -24,3 +24,24 @@
     top: 17%;
     position: absolute;
 }
+
+.profile-text {
+    bottom: 10%;
+    position: absolute;
+    left: 25%;
+}
+
+.profile-text, .name, .email, .dob, .contact {
+    color: rgb(196, 66, 64);
+    font-weight: 800;
+}
+
+.pfp {
+    height: 300px;
+    width: 300px;
+    z-index: -2;
+    background-color: red;
+    position: absolute;
+    right: 30%;
+    bottom: 45%;
+}
