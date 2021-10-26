@@ -133,7 +133,7 @@ class Assignments(models.Model):
     subject_id = models.ForeignKey(Subject, on_delete=models.CASCADE)
     assignment_name = models.TextField(default="Assignment")
     created = models.DateTimeField(auto_now_add=True)
-    status = models.CharField(max_length=10, default="Pending")
+    status = models.CharField(max_length=10, default="Pending", null = False)
     submission_date = models.DateTimeField(null=True)
 
     def get_assignment_name(self):

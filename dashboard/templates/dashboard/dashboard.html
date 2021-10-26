@@ -73,54 +73,15 @@
     <div class="title">
       Announcements
     </div>
-    <!-- {% for items in announcementname %}
-        {{items.announcement_name}}
-        {% endfor %%} -->
+
     <div class="ann">
       <table class="ann-table">
         <tbody class="ann-body">
+          {% for items in announcementname %}
           <tr class="border-bottom">
-            <td class="ann-text">test</td>
+            <td class="ann-text">{{items.announcement_name}}</td>
           </tr>
-          <tr class="border-bottom">
-            <td class="ann-text">test</td>
-          </tr>
-          <tr class="border-bottom">
-            <td class="ann-text">test</td>
-          </tr>
-          <tr class="border-bottom">
-            <td class="ann-text">test</td>
-          </tr>
-          <tr class="border-bottom">
-            <td class="ann-text">test</td>
-          </tr>
-          <tr class="border-bottom">
-            <td class="ann-text">test</td>
-          </tr>
-          <tr class="border-bottom">
-            <td class="ann-text">test</td>
-          </tr>
-          <tr class="border-bottom">
-            <td class="ann-text">test</td>
-          </tr>
-          <tr class="border-bottom">
-            <td class="ann-text">test</td>
-          </tr>
-          <tr class="border-bottom">
-            <td class="ann-text">test</td>
-          </tr>
-          <tr class="border-bottom">
-            <td class="ann-text">test</td>
-          </tr>
-          <tr class="border-bottom">
-            <td class="ann-text">test</td>
-          </tr>
-          <tr class="border-bottom">
-            <td class="ann-text">test</td>
-          </tr>
-          <tr class="border-bottom">
-            <td class="ann-text">test</td>
-          </tr>
+          {% endfor %%}
         </tbody>
       </table>
     </div>
@@ -145,7 +106,7 @@
           <td class="ass-table">{{items.subject_id.subject_name}}</td>
           <td class="ass-table">{{items.created}}</td>
           <td class="ass-table">{{items.submission_date}}</td>
-          {% if items.status == TRUE %}
+          {% if items.status == 'Submitted' %}
           <td class="ass-table"><a class="status done" href="">Submitted</a></td>
           {% else %}
           <td class="ass-table"><a class="status pending" href="">Pending</a></td>
@@ -163,21 +124,22 @@
           <option>Feb</option>
           <option>Mar</option>
           <option>Apr</option>
-          <option selected>May</option>
+          <option>May</option>
           <option>Jun</option>
           <option>Jul</option>
           <option>Aug</option>
           <option>Sep</option>
-          <option>Oct</option>
+          <option selected>Oct</option>
           <option>Nov</option>
           <option>Dec</option>
         </select>
 
         <select name="calendar__year" id="calendar__year">
-          <option>2017</option>
           <option>2018</option>
           <option>2019</option>
-          <option selected>2020</option>
+          <option>2020</option>
+          <option selected>2021</option>
+
         </select>
       </div>
 
