@@ -91,10 +91,10 @@
       <a class="on" href="#" class="btn assign">Assignments</a>
       <a href="#" class="btn exam">Exam Schedule</a>
     </div>
-    <table class="GridTable">
-      <thead class="ass-header">
+    <table class="dash-GridTable">
+      <thead class="dash-ass-header">
         <tr>
-          <th>Assignment</th>
+          <th>Subject</th>
           <th>Start Date</th>
           <th>End Date</th>
           <th>Status</th>
@@ -103,13 +103,13 @@
       <tbody>
         {% for items in assignmentname %}
         <tr class="border-bottom">
-          <td class="ass-table">{{items.subject_id.subject_name}}</td>
-          <td class="ass-table">{{items.created}}</td>
-          <td class="ass-table">{{items.submission_date}}</td>
+          <td class="dash-ass-table">{{items.subject_id.subject_name}}</td>
+          <td class="dash-ass-table">{{items.created}}</td>
+          <td class="dash-ass-table">{{items.submission_date}}</td>
           {% if items.status == 'Submitted' %}
-          <td class="ass-table"><a class="status done" href="">Submitted</a></td>
+          <td class="dash-ass-table"><a class="status done" href="">Submitted</a></td>
           {% else %}
-          <td class="ass-table"><a class="status pending" href="">Pending</a></td>
+          <td class="dash-ass-table"><a class="status pending" href="">Pending</a></td>
           {% endif%}
         </tr>
         {% endfor %}

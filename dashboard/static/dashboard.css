@@ -54,6 +54,9 @@
   justify-content: space-between;
   width: 100%;
 }
+.ann::-webkit-scrollbar {
+  display: none;
+}
 .ann-table {
   border-collapse: collapse;
 }
@@ -64,14 +67,14 @@
   text-align: center;
   font-size: 1rem;
   margin: 0 2% 0 2%;
-
+  cursor: pointer;
 }
 .ann-body {
   overflow-y: scroll;
 }
-/* table thead { display:block; }
-table tbody { height:300px; overflow-y:scroll; display:block; } */
-
+.ann-body::-webkit-scrollbar {
+  display: none;
+}
 
 .big {
   grid-area: 3 / 1 / 5 / 5;
@@ -322,7 +325,7 @@ select {
     padding: 0.5rem 2.7rem;
 } */
 
-.GridTable {
+.dash-GridTable {
   table-layout: fixed;
   width: 100%;
   height: 85%;
@@ -331,20 +334,20 @@ select {
   border-collapse: collapse;
 }
 
-.ass-table {
+.dash-ass-table {
   text-align: center;
   width: 0.1rem;
 }
 
-.ass-header {
+.dash-ass-header {
   font-weight: 700;
 }
 
-.ass-header:first-child {
+.dash-ass-header:first-child {
   text-align: left;
 }
 
-.ass-table:first-child {
+.dash-ass-table:first-child {
   text-align: left;
 }
 

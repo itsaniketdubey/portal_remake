@@ -19,7 +19,10 @@ def logoutUser(request):
 
 @login_required(login_url='login')
 def dashboard(request):
-    return render(request, 'dashboard/dashboard.html', context)
+        if request.user.is_admin:
+            return render(request, 'dashboard/dashboard.html', context)
+        elif request.user.is_staff:
+            return render(request, 'dashboard/teacher.html', context)
 
 
 @login_required(login_url='login')

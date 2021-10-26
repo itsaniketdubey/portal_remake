@@ -1,3 +1,7 @@
+.ass-back {
+    margin: 0 2% 0 2%;
+    height: 30vh;
+}
 
 .sub-list {
     background-color: #f1f1f1;
@@ -31,5 +35,66 @@
     display: block;
     padding: 0.2rem 0.7rem;
     transition: all 250ms linear;
-} 
+}
 
+.sub-table {
+    margin-top: 3%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 79vh;
+    margin-left:4%;
+}
+
+.as-table {
+    width: 100%;
+    font-size: 0.9rem;
+}
+
+.as-body {
+    overflow-y: scroll;
+}
+
+.as-td {
+    text-align: center;
+    height: 7vh;
+}
+
+.as-header {
+    font-weight: 700;
+}
+
+.as-header:first-child {
+    text-align: left;
+}
+
+.as-td:first-child {
+    text-align: left;
+}
+
+.border-bottom {
+    border-bottom: 1px solid rgba(69, 69, 69, 0.1);
+}
+
+.status.pending {
+    background-color: rgb(250, 140, 71);
+    text-decoration: none;
+    border-radius: 0.3rem;
+    padding: 0.5rem 2rem;
+    color: white;
+}
+
+.status.done {
+    background-color: rgb(65, 155, 152);
+    text-decoration: none;
+    border-radius: 0.3rem;
+    padding: 0.5rem 1.5rem;
+    color: white;
+}
+
+.action-btn {
+    background-color: #f1f1f1;
+    text-decoration: none;
+    border-radius: 0.3rem;
+    padding: 0.5rem 1.5rem;
+    color: #333;
+}

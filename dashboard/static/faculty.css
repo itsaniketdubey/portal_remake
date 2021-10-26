@@ -1,82 +1,92 @@
 .faculty-back {
     margin: 1% 1% 0 2%;
 }
+@import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap");
 
-.faculty-cards {
-    background-color: #f1f1f1;
-    margin-top: 1%;
-    height: 85vh;
-    border-radius: 0.7rem;
-    box-shadow: -0.1rem -0.1rem 0.3rem #ffffffc4,
-        inset 0.1rem 0.1rem 0.3rem rgba(94, 104, 121, 0.288);
+* {
+    box-sizing: border-box;
+}
+
+.main {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+.main {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 30px 10px;
+    font-family: "DM Sans", sans-serif;
+    transition: background 0.4s ease-in;
 }
 
-#sel-img {
-    height: 0.9rem;
-}
-
-.faculty-view-selector a {
-    text-decoration: none;
-    font-size: 0.9rem;
-    margin-right: 1%;
-}
-
-.faculty-grid {
-    display: grid;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr;
-    grid-column-gap: 0.8rem;
-    grid-row-gap: 0.8rem;
-    width: 69vw;
-    height: 89%;
-}
-
-.faculty-grid-item {
+.fac-in[type=radio] {
     display: none;
-    background-color: white;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 0.7rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-#faculty-card {
-    height: auto; 
-    width: auto; 
-    max-width: 242px; 
-    max-height: 294px;
+.fac-card {
+    position: absolute;
+    width: 60%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transition: transform 0.4s ease;
+    cursor: pointer;
+}
+
+.fac-container {
+    max-width: 800px;
+    max-height: 600px;
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fac-cards {
+    position: relative;
+    width: 5rem;
+    height: 5rem;
+    margin-bottom: 20px;
+}
+
+.fac-img {
+    width: 5px;
+    height: 5px;
+    border-radius: 10px;
+}
+
+#item-1:checked~.fac-cards #song-3,
+#item-2:checked~.fac-cards #song-1,
+#item-3:checked~.fac-cards #song-2 {
+    transform: translatex(-40%) scale(0.8);
+    opacity: 0.4;
+    z-index: 0;
+}
+
+#item-1:checked~.fac-cards #song-2,
+#item-2:checked~.fac-cards #song-3,
+#item-3:checked~.fac-cards #song-1 {
+    transform: translatex(40%) scale(0.8);
+    opacity: 0.4;
+    z-index: 0;
+}
+
+#item-1:checked~.fac-cards #song-1,
+#item-2:checked~.fac-cards #song-2,
+#item-3:checked~.fac-cards #song-3 {
+    transform: translatex(0) scale(1);
+    opacity: 1;
     z-index: 1;
 }
 
-.pfp{
-    width: 110px;
-    height: 110px;
-    z-index: 0;
-    position: absolute;
-    top: 27.3%;
-}
-
-#faculty-pfp{
-    width: 110px;
-    height: 110px;
-    z-index: 0;
-    position: absolute;
-}
-
-.fac1 {
-    grid-area: 1 / 1 / 2 / 2;
-}
-
-.fac2 {
-    grid-area: 1 / 2 / 2 / 3;
-}
-
-.fac3 {
-    grid-area: 1 / 3 / 2 / 4;
+#item-1:checked~.fac-cards #song-1 img,
+#item-2:checked~.fac-cards #song-2 img,
+#item-3:checked~.fac-cards #song-3 img {
+    box-shadow: 0px 0px 5px 0px rgba(81, 81, 81, 0.47);
 }

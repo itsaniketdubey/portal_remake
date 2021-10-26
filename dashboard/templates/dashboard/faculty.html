@@ -1,32 +1,34 @@
 {% extends 'dashboard/base.html' %}
 {% load static %}
 {% block content %}
-<div class="faculty-back">
-    <div class="faculty-cards">
-        <div class="prev">P</div>
-        <div class="faculty-grid">
-            <div class="faculty-grid-item fac1">
-                <div class="pfp">
-                    <img id="faculty-pfp" src="{% static 'faculty_pfp.png' %}" alt="faculty">
-                </div>
-                <img id="faculty-card" src="{% static 'faculty_card.png' %}" alt="faculty">
-            </div>
-            <div class="faculty-grid-item fac2">
-                <div class="pfp">
-                    <img id="faculty-pfp" src="{% static 'faculty_pfp.png' %}" alt="faculty">
-                </div>
-                <img id="faculty-card" src="{% static 'faculty_card.png' %}" alt="faculty">
-            </div>
-            <div class="faculty-grid-item fac3">
-                <div class="pfp">
-                    <img id="faculty-pfp" src="{% static 'faculty_pfp.png' %}" alt="faculty">
-                </div>
-                <img id="faculty-card" src="{% static 'faculty_card.png' %}" alt="faculty">
-            </div>
-        </div>
-        <div class="next">N</div>
+<div class="fac-back">
+    <div class="main">
+        <div class="fac-container">
+            <input class="fac-in" type="radio" name="slider" id="item-1" checked>
+            <input class="fac-in" type="radio" name="slider" id="item-2">
+            <input class="fac-in" type="radio" name="slider" id="item-3">
+            <div class="fac-cards">
+                <label class="fac-card" for="item-1" id="song-1">
+                    <img class="fac-img"
+                        src="{% static 'background.png' %}"
+                        alt="song">
+                </label>
+                <label class="fac-card" for="item-2" id="song-2">
+                    <img class="fac-img"
+                        src="{% static 'faculty_card.png' %}"
+                        alt="song">
+                </label>
+                <label class="fac-card" for="item-3" id="song-3">
+                    <img class="fac-img"
+                        src="{% static 'faculty_card.png' %}"
+                        alt="song">
+                </label>
 
+            </div>
+
+        </div>
     </div>
 </div>
+    
 
 {% endblock content %}

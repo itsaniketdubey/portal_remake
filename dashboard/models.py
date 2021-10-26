@@ -9,12 +9,13 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 class UserManager(BaseUserManager):
-    def create_user(self, email, password=None):
+    def create_user(self, sap,email, password=None):
         if not email:
             raise ValueError('Users must have an email address')
 
         user = self.model(
             email=self.normalize_email(email),
+            sap = sap
         )
 
         user.set_password(password)
@@ -23,17 +24,18 @@ class UserManager(BaseUserManager):
 
     def create_staffuser(self, email, password):
         user = self.create_user(
-            email,
+            email=self.normalize_email(email),
             password=password,
         )
         user.staff = True
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, email, password):
+    def create_superuser(self,sap, email, password):
         user = self.create_user(
-            email,
+            email=self.normalize_email(email),
             password=password,
+            sap = sap
         )
         user.staff = True
         user.admin = True
@@ -48,6 +50,7 @@ class User(AbstractBaseUser):
         unique=True,
         default="test@gmail.com"
     )
+    teacher = models.IntegerField(null=True,default=1)
     name = models.TextField(null=True)
     sap = models.TextField(
         null=True, default="00000000000", max_length=11, unique=True)
@@ -59,7 +62,7 @@ class User(AbstractBaseUser):
     admin = models.BooleanField(default=False)  # a superuser
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = []  # Email & Password are required by default.
+    REQUIRED_FIELDS = ['sap']  # Email & Password are required by default.
 
     def get_name(self):
         return self.email
@@ -115,7 +118,7 @@ class Subject(models.Model):
 
 class Branch(models.Model):
     sap = models.ForeignKey(
-        User, to_field='sap', on_delete=models.CASCADE, default="00000000000", max_length=11)
+        User, to_field='sap',null=True, on_delete=models.SET_NULL, default="00000000000", max_length=11)
     branch_name = models.TextField(default="BRANCH", unique=True)
     branch_id = models.UUIDField(
         default=uuid.uuid4, unique=True, primary_key=True)
@@ -188,7 +191,7 @@ class Announcements(models.Model):
 
 class ICA(models.Model):
     sap = models.ForeignKey(
-        User, to_field='sap', on_delete=models.CASCADE, default="00000000000", max_length=11)
+        User, to_field='sap', null= True,on_delete=models.SET_NULL, default="00000000000", max_length=11)
     subject_id = models.ForeignKey(Subject, on_delete=models.CASCADE)
     m1 = models.IntegerField(default=0, validators=[
                              MaxValueValidator(10), MinValueValidator(0)])
@@ -208,7 +211,7 @@ class ICA(models.Model):
 
 class Attendance(models.Model):
     sap = models.ForeignKey(
-        User, to_field='sap', on_delete=models.CASCADE, default="00000000000", max_length=11)
+        User, to_field='sap', null = True, on_delete=models.SET_NULL, default="00000000000", max_length=11)
     subject = models.ForeignKey(Subject, on_delete=models.DO_NOTHING)
     date = models.DateField()
     created_at = models.DateTimeField(auto_now_add=True)
@@ -216,14 +219,4 @@ class Attendance(models.Model):
     class Meta:
         verbose_name_plural = "Attendance"
 
-
-class AttendanceReport(models.Model):
-    sap = models.ForeignKey(
-        User, to_field='sap', on_delete=models.CASCADE, default="00000000000", max_length=11)
-    attendance = models.ForeignKey(Attendance, on_delete=models.CASCADE)
-    status = models.BooleanField(default=False)
-    created_at = models.DateTimeField(auto_now_add=True)
-
-    class Meta:
-        verbose_name_plural = "AttendanceReport"
 # END OF ATTENDANCE MODEL

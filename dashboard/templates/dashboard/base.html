@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{% static 'base.css' %}">
     <link rel="stylesheet" href="{% static 'dashboard.css' %}">
     <link rel="stylesheet" href="{% static 'faculty.css' %}">
+    <link rel="stylesheet" href="{% static 'attendance.css' %}">
     <link rel="stylesheet" href="{% static 'ica.css' %}">
     <link rel="stylesheet" href="{% static 'library.css' %}">
     <link rel="stylesheet" href="{% static 'assignments.css' %}">
@@ -49,12 +50,12 @@
             {% endif %}
 
             {% if request.path == "/dashboard/attendance/"%}
-            <a class="pg active" href="#">
+            <a class="pg active" href="{% url 'attendance' %}">
                 <img class="ico attendance" src="{% static 'attendance.png' %}" alt="">
                 Attendance
             </a>
             {% else %}
-            <a class="pg" href="#">
+            <a class="pg" href="{% url 'attendance' %}">
                 <img class="ico attendance" src="{% static 'attendance.png' %}" alt="">
                 Attendance
             </a>
