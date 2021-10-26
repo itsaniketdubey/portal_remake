@@ -9,4 +9,4 @@ admin.site.register(Announcements)
 admin.site.register(Branch)
 admin.site.register(ICA)
 admin.site.register(Attendance)
-admin.site.register(AttendanceReport)
+
