@@ -111,7 +111,7 @@
   display: block;
   padding: 0.5rem 2.7rem;
 }
-
+ 
 #d-a{
   height: 87.5%;
   display: block;
@@ -354,23 +354,27 @@ select {
   border-collapse: collapse;
 }
 
-.dash-ass-table {
+.dash-e-table {
   text-align: center;
-  width: 0.1rem;
+}
+.dash-e-header:first-child {
+  text-align: left;
 }
 
+.dash-ass-table {
+  width: 0.1rem;
+  text-align: center;
+}
 .dash-ass-header {
   font-weight: 700;
+  text-align: center;
 }
-
 .dash-ass-header:first-child {
   text-align: left;
 }
-
 .dash-ass-table:first-child {
   text-align: left;
 }
-
 .border-bottom {
   border-bottom: 1px solid rgba(69, 69, 69, 0.1);
 }
