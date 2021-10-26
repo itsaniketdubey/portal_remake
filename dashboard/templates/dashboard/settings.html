@@ -1,11 +1,24 @@
 {% extends 'dashboard/base.html' %}
 {% load static %}
 {% block content %}
+
 <div class="settings-back">
-    <div class="b">
-        <img src="{% static 'settings_back.png' %}" alt="">
+    <div class="set-main">
+        <div class="set-1">
+            <div class="b">
+                <img src="{% static 'settings_back.png' %}" alt="">
+            </div>
+            <a href="{#" class="set-edit">Edit</a>
+            <div class="profile-text">
+                name
+                email
+                dob
+                phone
+            </div>
+        </div>
     </div>
-    
 </div>
+
+
 
 {% endblock content %}

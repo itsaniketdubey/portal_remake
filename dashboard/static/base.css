@@ -6,6 +6,10 @@
     color: #454545;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .background {
     display: flex;
     height: 100vh;

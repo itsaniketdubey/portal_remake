@@ -35,7 +35,7 @@
 .title {
   display: flex;
   align-items: center;
-  border-radius: 0.7rem;
+  border-radius: 0.7rem 0.7rem 0 0;
   border: 2px solid rgb(196, 66, 64);
   color: rgb(196, 66, 64);
   text-align: center;
@@ -44,23 +44,25 @@
 }
 
 .ann {
-  margin-top: 1%;
   background-color: #f6f6f6;
-  border-radius: 0.7rem;
+  border-radius: 0 0 0.7rem 0.7rem;
   box-shadow: -0.1rem -0.1rem 0.3rem #f6f6f6,
-  inset 0.1rem 0.1rem 0.3rem rgba(94, 104, 121, 0.288);
+    inset 0.1rem 0.1rem 0.3rem rgba(94, 104, 121, 0.288);
   height: 85%;
   overflow: auto;
   justify-content: space-between;
   width: 100%;
 }
+
 .ann::-webkit-scrollbar {
   display: none;
 }
+
 .ann-table {
   border-collapse: collapse;
 }
-.ann-text{
+
+.ann-text {
   width: 100vw;
   height: 12vh;
   font-weight: 500;
@@ -69,9 +71,11 @@
   margin: 0 2% 0 2%;
   cursor: pointer;
 }
+
 .ann-body {
   overflow-y: scroll;
 }
+
 .ann-body::-webkit-scrollbar {
   display: none;
 }
@@ -99,6 +103,22 @@
   text-decoration: none;
   display: block;
   padding: 0.5rem 2.7rem;
+}
+
+.cat {
+  text-decoration: none;
+  font-size: 0.75rem;
+  display: block;
+  padding: 0.5rem 2.7rem;
+}
+
+#d-a{
+  height: 87.5%;
+  display: block;
+}
+#d-e{
+  height: 86%;
+  display: none;
 }
 
 .header a.on {

@@ -88,33 +88,80 @@
   </div>
   <div class="grid-item big">
     <div class="header">
-      <a class="on" href="#" class="btn assign">Assignments</a>
-      <a href="#" class="btn exam">Exam Schedule</a>
+      <a class="cat on" href="#" class="btn assign" onclick="assignment();changeSub();">Assignments</a>
+      <a class="cat" href="#" class="btn exam" onclick="exam();changeSub();">Exam Schedule</a>
     </div>
-    <table class="dash-GridTable">
-      <thead class="dash-ass-header">
-        <tr>
-          <th>Subject</th>
-          <th>Start Date</th>
-          <th>End Date</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for items in assignmentname %}
-        <tr class="border-bottom">
-          <td class="dash-ass-table">{{items.subject_id.subject_name}}</td>
-          <td class="dash-ass-table">{{items.created}}</td>
-          <td class="dash-ass-table">{{items.submission_date}}</td>
-          {% if items.status == 'Submitted' %}
-          <td class="dash-ass-table"><a class="status done" href="">Submitted</a></td>
-          {% else %}
-          <td class="dash-ass-table"><a class="status pending" href="">Pending</a></td>
-          {% endif%}
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
+
+    <div id="d-a">
+      <table class="dash-GridTable">
+        <thead class="dash-ass-header">
+          <tr>
+            <th>Subject</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for items in assignmentname %}
+          <tr class="border-bottom">
+            <td class="dash-ass-table">{{items.subject_id.subject_name}}</td>
+            <td class="dash-ass-table">{{items.created}}</td>
+            <td class="dash-ass-table">{{items.submission_date}}</td>
+            {% if items.status == 'Submitted' %}
+            <td class="dash-ass-table"><a class="status done" href="">Submitted</a></td>
+            {% else %}
+            <td class="dash-ass-table"><a class="status pending" href="">Pending</a></td>
+            {% endif%}
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <div id="d-e">
+      <table class="dash-GridTable">
+        <thread class="dash-e-header">
+          <th>Date</th>
+          <th>Day</th>
+          <th>Timing</th>
+          <th>Exam</th>
+        </thread>
+        <tbody>
+          <tr class="border-bottom">
+            <td class="dash-e-table">11/11/2021</td>
+            <td class="dash-e-table">Thursday</td>
+            <td class="dash-e-table">11:30-01:00 pm</td>
+            <td class="dash-e-table">MAE</td>
+          </tr>
+          <tr class="border-bottom">
+            <td class="dash-e-table">13/11/2021</td>
+            <td class="dash-e-table">Saturday</td>
+            <td class="dash-e-table">01:30-03:00 pm</td>
+            <td class="dash-e-table">DAA</td>
+          </tr>
+          <tr class="border-bottom">
+            <td class="dash-e-table">16/11/2021</td>
+            <td class="dash-e-table">Tuesday</td>
+            <td class="dash-e-table">01:30-03:00 pm</td>
+            <td class="dash-e-table">MAE</td>
+          </tr>
+          <tr class="border-bottom">
+            <td class="dash-e-table">18/11/2021</td>
+            <td class="dash-e-table">Thursday</td>
+            <td class="dash-e-table">01:30-03:00 pm</td>
+            <td class="dash-e-table">CN</td>
+          </tr>
+          <tr class="border-bottom">
+            <td class="dash-e-table">20/11/2021</td>
+            <td class="dash-e-table">Saturday</td>
+            <td class="dash-e-table">01:30-03:00 pm</td>
+            <td class="dash-e-table">DM</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
   </div>
   <div class="grid-item cal">
     <div class="calendar">
@@ -203,4 +250,23 @@
     </div>
   </div>
 </div>
+
+<script>
+  function changeSub() {
+    $(".header a").on("click", function () {
+      $(".header").find(".on").removeClass("on");
+      $(this).addClass("on");
+    });
+  }
+
+  function assignment() {
+    document.getElementById("d-a").style.display = "block";
+    document.getElementById("d-e").style.display = "none";
+  }
+
+  function exam() {
+    document.getElementById("d-a").style.display = "none";
+    document.getElementById("d-e").style.display = "block";
+  }
+</script>
 {% endblock content %}
