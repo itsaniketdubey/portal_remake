@@ -8,7 +8,8 @@ context = {
     'branchname': Branch.objects.all(),
     'assignmentname': Assignments.objects.all(),
     'announcementname': Announcements.objects.all(),
-    'ica':ICA.objects.all()
+    'ica':ICA.objects.all(),
+    'faculty': Faculty.objects.all()
 }
 
 
@@ -58,3 +59,9 @@ def settings(request):
 @login_required(login_url='login')
 def attendance(request):
     return render(request, 'dashboard/attendance.html', context)
+
+@login_required(login_url='login')
+def faculty(request):
+    p = Faculty.objects.first()
+    context = {'objs':p}
+    return render(request, 'dashboard/faculty.html', context)

@@ -29,7 +29,7 @@ html {
     box-shadow: 0 0.5rem 0.5rem rgb(69, 69, 69);
 }
 
-#logo { 
+#logo {
     display: block;
     width: 46%;
     height: auto;
@@ -60,7 +60,7 @@ html {
     margin-top: 0.1rem;
 }
 
-.sidebar a.active > img {
+.sidebar a.active>img {
     filter: invert(1);
 }
 
@@ -70,14 +70,14 @@ html {
     border-radius: 0.75rem;
     padding: 1rem;
     margin-top: 0.1rem;
-   
+
 }
 
-.sidebar a:hover:not(.active) > img {
-     filter: invert(1);
+.sidebar a:hover:not(.active)>img {
+    filter: invert(1);
 }
 
-.navbar-small{
+.navbar-small {
     display: none;
 }
 
@@ -132,8 +132,8 @@ input[type="search"] {
     width: 100%;
     font-size: 13px;
     background: #f1f1f1;
-    box-shadow: -0.1rem -0.1rem 0.3rem #ffffffc4, 
-    inset 0.1rem 0.1rem 0.3rem rgba(94, 104, 121, 0.288);
+    box-shadow: -0.1rem -0.1rem 0.3rem #ffffffc4,
+        inset 0.1rem 0.1rem 0.3rem rgba(94, 104, 121, 0.288);
     padding: 0 1.6rem;
     border-radius: 0.5rem;
     appearance: none;
@@ -177,9 +177,26 @@ input:not(:placeholder-shown) {
     height: 1.7rem;
 }
 
-/* .notification:hover {
-    background: rgb(196, 66, 64);
-} */
+.std-name {
+    width: 30%;
+    display: flex;
+    align-items: center;
+}
+
+#nav-pfp {
+    height: 2.5rem;
+    width: 2.5rem;
+    float: left;
+    margin-left: 10%;
+    border-radius: 50%;
+    border: 1px solid red;
+}
+
+#nav-user {
+    margin-left: 3%;
+    font-size: 1.2rem;
+
+}
 
 .notification .badge {
     position: absolute;
@@ -211,36 +228,40 @@ input:not(:placeholder-shown) {
 /* ==============================RESPONSIVENESS========================================= */
 /* ===================================================================================== */
 
-@media screen and (max-width: 1300px){
+@media screen and (max-width: 1300px) {
     /* .grid-container {
         display: none;
     } */
 }
 
-@media screen and (max-width: 800px){
-    #logo{
-        margin: 1rem 2.7rem; 
+@media screen and (max-width: 800px) {
+    #logo {
+        margin: 1rem 2.7rem;
     }
 
     form {
         width: 15rem;
     }
+
     input {
         height: 2.3rem;
     }
+
     #go {
         height: 2.3rem;
     }
+
     #logout {
         height: 2.3rem;
         width: 6rem;
     }
+
     nav ul li {
         margin-left: 0.7rem;
     }
 }
 
-@media screen and (max-width: 540px){
+@media screen and (max-width: 540px) {
 
     .sidebar {
         position: fixed;
@@ -251,68 +272,40 @@ input:not(:placeholder-shown) {
         height: 100vh;
         z-index: 9999;
     }
-   
+
 
     #logo {
         display: none;
     }
 
-    .sidebar a{
-        line-height: 0; 
+    .sidebar a {
+        line-height: 0;
         font-size: 0;
-        color: transparent; 
+        color: transparent;
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
-    .sidebar a img{
+    .sidebar a img {
         margin-left: 0.5rem;
         height: 1.2rem;
     }
 
-    .navbar-main{
-        display: none;
-    }
-    #go {
+    .navbar-main {
         display: none;
     }
 
     .navbar-small {
-        background-color: red;
         position: fixed;
         display: flex;
         width: 100vw;
         height: 15%;
         z-index: 999;
     }
-    #search{
-        display: none;
-        width: 1.75rem;
-        height: 1.75rem;
-    }
-    
-    form {
-        width: 10rem;
-        background-color: transparent;
-        cursor: pointer;
+
+    .std-name {
+        margin-left: 17%;
     }
 
-    #demo-2 input[type=search] {
-        width: 1rem;
-        padding-left: 10px;
-        color: transparent;
-        cursor: pointer;
-    }
-    #demo-2 input[type=search]:hover {
-        background: #f1f1f1;
-    }
-    #demo-2 input[type=search]:focus {
-        width: 10rem;
-        padding-left: 32px;
-        color: #000;
-        background: #f1f1f1;
-        cursor: auto;
-    }
-    
 }

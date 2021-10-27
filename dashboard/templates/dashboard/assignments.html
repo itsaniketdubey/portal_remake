@@ -4,13 +4,10 @@
 
 <div class="ass-back">
     <div class="sub-list">
-        <a class="sub on" href="#" onclick="changeSub()">DAA</a>
-        <a class="sub" href="#" onclick="changeSub()">MAE</a>
-        <a class="sub" href="#" onclick="changeSub()">CN</a>
-        <a class="sub" href="#" onclick="changeSub()">Web Programming</a>
-        <a class="sub" href="#" onclick="changeSub()">DM</a>
-        <a class="sub" href="#" onclick="changeSub()">IP</a>
-        <a class="sub" href="#" onclick="changeSub()">EVS</a>
+        {% for items in assignmentname %}
+        <a class="sub on" href="#" value="{{items.subject_id.subject_name}}"
+            onclick="changeSub()">{{items.subject_id.subject_name}}</a>
+        {%endfor%}
     </div>
     <div class="sub-table">
         <table class="as-table">
@@ -22,118 +19,19 @@
                 <th class="as-header">Action</th>
             </tr>
             <tbody class="as-body">
+                {% for items in assignmentname %}
                 <tr class="border-bottom">
-                    <td class="as-td">Experiment 1</td>
-                    <td class="as-td">Oct. 23, 2021, 6:50 p.m.</td>
-                    <td class="as-td">Oct. 30, 2021, 11:59 p.m.</td>
-                    <td class="as-td"><a class="status pending" href="">Pending</a></td>
+                    <td class="as-td">{{items.assignment_name}}</td>
+                    <td class="as-td">{{items.created}}</td>
+                    <td class="as-td">{{items.submission_date}}</td>
+                    {% if items.status == 'Submitted' %}
+                    <td class="dash-ass-table"><a class="status done" href="">Submitted</a></td>
+                    {% else %}
+                    <td class="dash-ass-table"><a class="status pending" href="">Pending</a></td>
+                    {% endif%}
                     <td class="as-td"><a class="action-btn" href="">Submit</a></td>
                 </tr>
-                <tr class="border-bottom">
-                    <td class="as-td">Experiment 1</td>
-                    <td class="as-td">Oct. 23, 2021, 6:50 p.m.</td>
-                    <td class="as-td">Oct. 30, 2021, 11:59 p.m.</td>
-                    <td class="as-td"><a class="status pending" href="">Pending</a></td>
-                    <td class="as-td"><a class="action-btn" href="">Submit</a></td>
-                </tr>
-                <tr class="border-bottom">
-                    <td class="as-td">Experiment 1</td>
-                    <td class="as-td">Oct. 23, 2021, 6:50 p.m.</td>
-                    <td class="as-td">Oct. 30, 2021, 11:59 p.m.</td>
-                    <td class="as-td"><a class="status pending" href="">Pending</a></td>
-                    <td class="as-td"><a class="action-btn" href="">Submit</a></td>
-                </tr>
-                <tr class="border-bottom">
-                    <td class="as-td">Experiment 1</td>
-                    <td class="as-td">Oct. 23, 2021, 6:50 p.m.</td>
-                    <td class="as-td">Oct. 30, 2021, 11:59 p.m.</td>
-                    <td class="as-td"><a class="status pending" href="">Pending</a></td>
-                    <td class="as-td"><a class="action-btn" href="">Submit</a></td>
-                </tr>
-                <tr class="border-bottom">
-                    <td class="as-td">Experiment 1</td>
-                    <td class="as-td">Oct. 23, 2021, 6:50 p.m.</td>
-                    <td class="as-td">Oct. 30, 2021, 11:59 p.m.</td>
-                    <td class="as-td"><a class="status pending" href="">Pending</a></td>
-                    <td class="as-td"><a class="action-btn" href="">Submit</a></td>
-                </tr>
-                <tr class="border-bottom">
-                    <td class="as-td">Experiment 1</td>
-                    <td class="as-td">Oct. 23, 2021, 6:50 p.m.</td>
-                    <td class="as-td">Oct. 30, 2021, 11:59 p.m.</td>
-                    <td class="as-td"><a class="status pending" href="">Pending</a></td>
-                    <td class="as-td"><a class="action-btn" href="">Submit</a></td>
-                </tr>
-                <tr class="border-bottom">
-                    <td class="as-td">Experiment 1</td>
-                    <td class="as-td">Oct. 23, 2021, 6:50 p.m.</td>
-                    <td class="as-td">Oct. 30, 2021, 11:59 p.m.</td>
-                    <td class="as-td"><a class="status pending" href="">Pending</a></td>
-                    <td class="as-td"><a class="action-btn" href="">Submit</a></td>
-                </tr>
-                <tr class="border-bottom">
-                    <td class="as-td">Experiment 1</td>
-                    <td class="as-td">Oct. 23, 2021, 6:50 p.m.</td>
-                    <td class="as-td">Oct. 30, 2021, 11:59 p.m.</td>
-                    <td class="as-td"><a class="status pending" href="">Pending</a></td>
-                    <td class="as-td"><a class="action-btn" href="">Submit</a></td>
-                </tr>
-                <tr class="border-bottom">
-                    <td class="as-td">Experiment 1</td>
-                    <td class="as-td">Oct. 23, 2021, 6:50 p.m.</td>
-                    <td class="as-td">Oct. 30, 2021, 11:59 p.m.</td>
-                    <td class="as-td"><a class="status pending" href="">Pending</a></td>
-                    <td class="as-td"><a class="action-btn" href="">Submit</a></td>
-                </tr>
-                <tr class="border-bottom">
-                    <td class="as-td">Experiment 1</td>
-                    <td class="as-td">Oct. 23, 2021, 6:50 p.m.</td>
-                    <td class="as-td">Oct. 30, 2021, 11:59 p.m.</td>
-                    <td class="as-td"><a class="status pending" href="">Pending</a></td>
-                    <td class="as-td"><a class="action-btn" href="">Submit</a></td>
-                </tr>
-                <tr class="border-bottom">
-                    <td class="as-td">Experiment 1</td>
-                    <td class="as-td">Oct. 23, 2021, 6:50 p.m.</td>
-                    <td class="as-td">Oct. 30, 2021, 11:59 p.m.</td>
-                    <td class="as-td"><a class="status pending" href="">Pending</a></td>
-                    <td class="as-td"><a class="action-btn" href="">Submit</a></td>
-                </tr>
-                <tr class="border-bottom">
-                    <td class="as-td">Experiment 1</td>
-                    <td class="as-td">Oct. 23, 2021, 6:50 p.m.</td>
-                    <td class="as-td">Oct. 30, 2021, 11:59 p.m.</td>
-                    <td class="as-td"><a class="status pending" href="">Pending</a></td>
-                    <td class="as-td"><a class="action-btn" href="">Submit</a></td>
-                </tr>
-                <tr class="border-bottom">
-                    <td class="as-td">Experiment 1</td>
-                    <td class="as-td">Oct. 23, 2021, 6:50 p.m.</td>
-                    <td class="as-td">Oct. 30, 2021, 11:59 p.m.</td>
-                    <td class="as-td"><a class="status pending" href="">Pending</a></td>
-                    <td class="as-td"><a class="action-btn" href="">Submit</a></td>
-                </tr>
-                <tr class="border-bottom">
-                    <td class="as-td">Experiment 1</td>
-                    <td class="as-td">Oct. 23, 2021, 6:50 p.m.</td>
-                    <td class="as-td">Oct. 30, 2021, 11:59 p.m.</td>
-                    <td class="as-td"><a class="status pending" href="">Pending</a></td>
-                    <td class="as-td"><a class="action-btn" href="">Submit</a></td>
-                </tr>
-                <tr class="border-bottom">
-                    <td class="as-td">Experiment 1</td>
-                    <td class="as-td">Oct. 23, 2021, 6:50 p.m.</td>
-                    <td class="as-td">Oct. 30, 2021, 11:59 p.m.</td>
-                    <td class="as-td"><a class="status pending" href="">Pending</a></td>
-                    <td class="as-td"><a class="action-btn" href="">Submit</a></td>
-                </tr>
-                <tr class="border-bottom">
-                    <td class="as-td">Experiment 1</td>
-                    <td class="as-td">Oct. 23, 2021, 6:50 p.m.</td>
-                    <td class="as-td">Oct. 30, 2021, 11:59 p.m.</td>
-                    <td class="as-td"><a class="status pending" href="">Pending</a></td>
-                    <td class="as-td"><a class="action-btn" href="">Submit</a></td>
-                </tr>
+                {%endfor%}
 
             </tbody>
         </table>
@@ -147,6 +45,7 @@
             $(".sub-list").find(".on").removeClass("on");
             $(this).addClass("on");
         });
+
     }
 </script>
 

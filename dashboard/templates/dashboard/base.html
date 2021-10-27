@@ -114,10 +114,14 @@
             {% endif %}
             
             
-        </div>
+        </div> 
 
         <div class="container">
             <div class="navbar-main">
+                <div class="std-name">
+                    <img id="nav-pfp" src="{{user.profile_pic.url}}" alt="pfp">
+                    <span id="nav-user">{{user.name}}</span>
+                </div>
                 <nav>
                     <ul>
                         <li>
@@ -135,10 +139,10 @@
                 </nav>
             </div>
             <div class="navbar-small">
-                <img id="search" src="{% static 'search.png' %}" alt="search">
-                <form id="demo-2">
-                    <input type="search" placeholder="Search">
-                </form>
+                <div class="std-name">
+                    <img id="nav-pfp" src="{{user.profile_pic.url}}" alt="pfp">
+                    <span id="nav-user">{{user.name}}</span>
+                </div>
             </div>
                 {% block content%}
 

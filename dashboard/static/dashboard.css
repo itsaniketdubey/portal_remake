@@ -407,9 +407,10 @@ select {
 @media screen and (max-width: 540px) {
 
   .grid-container {
-    background-color: yellow;
     display: grid;
     margin-top: 30%;
+    grid-template-columns: 1fr;
+grid-template-rows: repeat(5, 1fr);
     margin-left: 17%;
     width: 83%;
     overflow: scroll;
@@ -422,7 +423,7 @@ select {
   }
 
   .one {
-    grid-area: 1 / 1 / 2 / 2;
+    grid-area: 1 / 1 / 2 / 2; 
 
   }
 
